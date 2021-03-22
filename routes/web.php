@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\categoryController;
+use App\Http\Controllers\itemController;
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +22,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('category',categoryController::class);
+Route::resource('item',itemController::class);
