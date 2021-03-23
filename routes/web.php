@@ -23,5 +23,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
+
+Route::group(['prefix'=>'Admin','as'=>'Admin.','middleware'=> ['role:admin']], function() {
+    Route::resource('/users',\App\Http\Controllers\UserController::class);
+});
 Route::resource('category',categoryController::class);
 Route::resource('item',itemController::class);

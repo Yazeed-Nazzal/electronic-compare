@@ -46,7 +46,7 @@
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
-                            
+
                             @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
@@ -58,6 +58,9 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('item.index') }}">Manage Item</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('Admin.users.index') }}">Manage Users</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -76,7 +79,7 @@
                                     </form>
                                 </div>
                             </li>
-                            
+
                         @endguest
                     </ul>
                 </div>
