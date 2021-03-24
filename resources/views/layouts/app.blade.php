@@ -17,9 +17,10 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"  rel="stylesheet">
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+{{--    <link href="{{ asset('css/app.css') }}" rel="stylesheet">--}}
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
-    
+
 </head>
 <body>
     <div id="app">
@@ -91,7 +92,7 @@
             @yield('content')
         </main>
     </div>
-    
+
     <script src="{{asset('js/jquery-3.5.1.min.js')}}"></script>
     <script src="{{asset('js/jquery.repeater.min.js')}}"></script>
     <script src="{{asset('js/repeater.js')}}"></script>
