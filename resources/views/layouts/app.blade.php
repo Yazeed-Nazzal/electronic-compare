@@ -19,6 +19,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
+    
 </head>
 <body>
     <div id="app">
@@ -90,5 +91,21 @@
             @yield('content')
         </main>
     </div>
+    
+    <script src="{{asset('js/jquery-3.5.1.min.js')}}"></script>
+    <script src="{{asset('js/jquery.repeater.min.js')}}"></script>
+    <script src="{{asset('js/repeater.js')}}"></script>
+<script>
+  $('.repeater-default').repeater({
+  show: function () {
+    $(this).slideDown();
+  },
+  hide: function (deleteElement) {
+    if (confirm('Are you sure you want to delete this element?')) {
+      $(this).slideUp(deleteElement);
+    }
+  }
+});
+    </script>
 </body>
 </html>
