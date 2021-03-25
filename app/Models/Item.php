@@ -18,7 +18,7 @@ class Item extends Model
     }
 
     public function features(){
-        return $this->hasMany('App\Models\Featrue','item_id');
+        return $this->hasMany('App\Models\Feature','item_id');
     }
 
     public function images(){
