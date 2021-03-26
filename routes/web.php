@@ -25,6 +25,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::group(['prefix'=>'Admin','as'=>'Admin.','middleware'=> ['role:admin']], function() {
     Route::resource('/users',\App\Http\Controllers\UserController::class);
+    Route::resource('/comments',\App\Http\Controllers\CommentController::class);
 });
 
 Route::resource('category',categoryController::class);
