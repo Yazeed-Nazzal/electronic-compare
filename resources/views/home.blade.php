@@ -1,22 +1,36 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container mt-5">
+    <h1 class="text-center mt-5">Statistics</h1>
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
+        <div class="col-md-3">
+            <p> Total Users</p>
+            <div>
+                <i class="fas fa-users"></i>
             </div>
+
+        </div>
+        <div class="col-md-3">
+            <p> Total Category's</p>
+           <div>
+               <i class="fas fa-archive"></i>
+           </div>
+
+        </div>
+        <div class="col-md-3">
+            <p> Total Items </p>
+            <div>
+                <i class="fas fa-puzzle-piece"></i>
+            </div>
+
+        </div>
+        <div class="col-md-3">
+            <p> Total Comments </p>
+            <div>
+                <i class="fas fa-comment-dots"></i>
+            </div>
+
         </div>
     </div>
 </div>
