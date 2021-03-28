@@ -58,7 +58,7 @@
                     <label for="name">Name Category</label>
                     <input type="text" name="name" id="name" placeholder="Enter Category" class="form-control">
                 </div>
-                <div class="group-form">
+                <div class="group-form mt-3">
                     <button type="submit" class="btn btn-success">Create</button>
                 </div>
             </form>

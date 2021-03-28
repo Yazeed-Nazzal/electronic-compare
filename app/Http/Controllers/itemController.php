@@ -15,7 +15,7 @@ class itemController extends Controller
     public function index()
     {
 
-        $items = Item::all();
+         $items = Item::with("images")->get();
         return view('admin.item.index',compact('items'));
     }
 
@@ -131,7 +131,11 @@ class itemController extends Controller
     public function destroy($id)
     {
         $item = Item::find($id);
+
         $item->delete();
+
+        session()->flash('success','Delete Item Successfully');
+
         return redirect()->route("item.index");
     }
 }

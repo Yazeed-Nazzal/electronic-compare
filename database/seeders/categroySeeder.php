@@ -23,3 +23,4 @@ class categroySeeder extends Seeder
         ]);
     }
 }
+   

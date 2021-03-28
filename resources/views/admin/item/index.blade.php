@@ -12,13 +12,13 @@
             </button>
         </div>
     @endif
-
-    <a class="btn btn-primary " href="{{route('item.create')}}">Add Item</a>
     <div class="row mt-4">
         <div class="col-lg-12">
-        <table class="table">
+        <a class="btn btn-primary float-right mb-5" href="{{route('item.create')}}">Add Item</a>
+        <table class="table table-dark">
         <thead>
             <tr>
+            <th scope="col">Image</th>
             <th scope="col">Name</th>
             <th scope="col">Price</th>
             <th scope="col">Added Date</th>
@@ -28,16 +28,17 @@
         <tbody>
         @foreach($items as $item)
             <tr>
+                <td><img src="{{url('uploads/'.$item->images[0]->name)}}" style="width:100px;height:100px" alt=""></td>
                 <td>{{$item->item_name}}</td>
-                <td>{{$item->price}}</td>
+                <td>{{$item->price}} JOD</td>
                 <td>{{$item->created_at->toDateString()}}</td>
-                <td>
-                    <a class="btn btn-success mb-3" href="{{route('item.edit',$item->id)}}">Edit Item</a>    
+                <td class="d-flex">
                     <form action="{{route('item.destroy',$item->id)}}" method="POST">
                         @csrf
                         @method('delete')
                         <button class="btn btn-danger">delete</button>
                     </form>
+                    <a class="btn btn-success ml-3" href="{{route('item.edit',$item->id)}}">Edit Item</a> 
                 </td>
             </tr>
         @endforeach
