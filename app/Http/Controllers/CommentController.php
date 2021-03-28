@@ -14,7 +14,7 @@ class CommentController extends Controller
      */
     public function index()
     {
-        $comments = Comment::paginate(10);
+        $comments = Comment::with('user','item')->paginate(10);
 
         return view('admin.comments.index',compact('comments'));
     }
@@ -82,6 +82,7 @@ class CommentController extends Controller
      */
     public function destroy(Comment $comment)
     {
-        //
+        $comment->delete();
+        return back();
     }
 }
