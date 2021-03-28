@@ -41,42 +41,13 @@
                             </form>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#update_category">
-                              Update
-                            </button>
+                            <a href="{{route('category.edit',$category->id)}}" class="btn btn-primary"> Edit</a>
                         </td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>  
             {{$categories->links()}}      
-        </div>
-
-        <div class="modal fade" id="update_category" tabindex="-1" role="dialog" aria-labelledby="update_category" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Update Category</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form action="{{route('category.update',$category->id)}}" method="POST">
-                        @csrf
-                        @method('PUT')
-                        <div class="group-form">
-                            <label for="name">Name Category</label>
-                            <input type="text" name="name" value="{{$category->category_name}}" id="name" placeholder="Enter Category" class="form-control">
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-success">Update</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
         </div>
 
 

@@ -12,14 +12,37 @@
             </button>
         </div>
     @endif
-    <div class="row">
+
+    <a class="btn btn-primary " href="{{route('item.create')}}">Add Item</a>
+    <div class="row mt-4">
         <div class="col-lg-12">
-        <a class="btn btn-primary" href="{{route('item.create')}}">Add Item</a>
+        <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Added Date</th>
+            <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
         @foreach($items as $item)
-            <h2>{{$item->item_name}}</h2>
-            <a class="btn btn-success" href="{{route('item.edit',$item->id)}}">Edit Item</a>
+            <tr>
+                <td>{{$item->item_name}}</td>
+                <td>{{$item->price}}</td>
+                <td>{{$item->created_at->toDateString()}}</td>
+                <td>
+                    <a class="btn btn-success mb-3" href="{{route('item.edit',$item->id)}}">Edit Item</a>    
+                    <form action="{{route('item.destroy',$item->id)}}" method="POST">
+                        @csrf
+                        @method('delete')
+                        <button class="btn btn-danger">delete</button>
+                    </form>
+                </td>
+            </tr>
         @endforeach
-        
+        </tbody>
+        </table>  
         </div>
     </div>
 </div>

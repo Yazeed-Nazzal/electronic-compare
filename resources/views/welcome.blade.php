@@ -17,15 +17,9 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
         <link href="{{asset('css/style.css')}}" rel="stylesheet">
-
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-                color: black;
-            }
-        </style>
     </head>
     <body class="antialiased">
+
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
@@ -83,6 +77,7 @@
             </div>
         </div>
     </nav>
+
     <script src="{{ asset('js/app.js') }}" defer></script>
     </body>
 </html>

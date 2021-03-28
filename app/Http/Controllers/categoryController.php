@@ -43,8 +43,8 @@ class categoryController extends Controller
     public function edit(Category $category)
     {
         $category = Category::find($category);
-
-        return view('category.index',compact('category'));
+        
+        return view('admin.category.edit',compact('category'));
     }
 
 
