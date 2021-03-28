@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Comment;
+use App\Models\Item;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,8 +27,12 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $usersC = User::all()->count();
+        $itemC  = Item::all()->count();
+        $categoryC = Category::all()->count();
+        $commentC  = Comment::all()->count();
         if(auth()->user()->hasRole('admin')){
-            return view('home');
+            return view('home',compact('usersC','itemC','categoryC','commentC'));
         }
         else
         {
