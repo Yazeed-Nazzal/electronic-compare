@@ -20,6 +20,11 @@
 {{--    <link href="{{ asset('css/app.css') }}" rel="stylesheet">--}}
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
+    <style>
+        body {
+            color: white;
+        }
+    </style>
 
 </head>
 <body>
@@ -73,6 +78,11 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+                                    <a class="dropdown-item" href="/profile/edit/{{auth()->user()->id}}">
+                                        Account Edit
+                                    </a>
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -82,6 +92,9 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
+
+
+
                                 </div>
                             </li>
 

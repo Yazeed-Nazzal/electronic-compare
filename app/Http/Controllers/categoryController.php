@@ -13,8 +13,8 @@ class categoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    { 
-        $categories = Category::paginate(1);
+    {
+        $categories = Category::paginate(10);
 
         return view('admin.category.index',compact('categories'));
     }
@@ -29,7 +29,7 @@ class categoryController extends Controller
         Category::create([
             'category_name'=>$request->name,
         ]);
-        
+
         session()->flash('success','Category Create successfully');
 
         return redirect()->route('category.index');
@@ -43,11 +43,11 @@ class categoryController extends Controller
     public function edit(Category $category)
     {
         $category = Category::find($category);
-        
+
         return view('category.index',compact('category'));
     }
 
-   
+
     public function update(Request $request, Category $category)
     {
         $category->update([
@@ -59,11 +59,11 @@ class categoryController extends Controller
         return redirect()->route('category.index');
     }
 
-  
+
     public function destroy(Category $category)
     {
       $category->delete();
-        
+
       session()->flash('success','Delete Category successfully');
 
       return redirect()->route('category.index');

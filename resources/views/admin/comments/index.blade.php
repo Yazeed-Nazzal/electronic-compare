@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <h1 class="text-center pb-3">Comments Managment</h1>
     <div class="row justify-content-center">
         <div class="col-lg-8">
             <table class="table table-primary table-striped ">

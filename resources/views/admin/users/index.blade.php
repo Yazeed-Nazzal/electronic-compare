@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1 class="text-center pb-3">Users home</h1>
+    <h1 class="text-center pb-3">Users Management</h1>
 
     <div class="container">
 
@@ -16,38 +16,35 @@
         @endif
 
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-12">
                 <table class="table table-dark">
                     <thead>
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">user</th>
                         <th scope="col">email</th>
-                        <th scope="col">Created Date</th>
-                        <th scope="col">Delete</th>
-                        <th scope="col">Update</th>
+                        <th scope="col">Join Date</th>
+                        <th scope="col">Action</th>
                     </tr>
                     </thead>
                     <tbody>
+                    @php $counter = 1 @endphp
                     @foreach($users as $user)
                         <tr>
-                            <td>{{$user->id}}</td>
+                            <td>{{$counter}}</td>
                             <td>{{$user->name}}</td>
                             <td>{{$user->email}}</td>
                             <td>{{$user->created_at->toDateString()}}</td>
                             <td>
-                                <form action="" method="POST">
+                                <form action="/Admin/users/{{$user->id}}" method="POST">
                                     @csrf
                                     @method('delete')
                                     <button class="btn btn-danger">delete</button>
                                 </form>
                             </td>
-                            <td>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#update_category">
-                                    Update
-                                </button>
-                            </td>
+
                         </tr>
+                        @php $counter++ @endphp
                     @endforeach
                     </tbody>
                 </table>
@@ -69,7 +66,7 @@
                                 @method('PUT')
                                 <div class="group-form">
                                     <label for="name">User Name</label>
-                                    <input type="text" name="name" value="" id="name" placeholder="Enter Category" class="form-control">
+                                    <input type="text" name="name" value="{{$user->name}}" id="name" placeholder="Enter Category" class="form-control">
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -81,19 +78,6 @@
                 </div>
             </div>
 
-
-            <div class="col-lg-4">
-                <form action="{{}}" method="POST" class="form_category_style">
-                    @csrf
-                    <div class="group-form">
-                        <label for="name">User Name</label>
-                        <input type="text" name="name" id="name" placeholder="Enter Category" class="form-control">
-                    </div>
-                    <div class="group-form">
-                        <button type="submit" class="btn btn-success">Create</button>
-                    </div>
-                </form>
-            </div>
         </div>
     </div>
 

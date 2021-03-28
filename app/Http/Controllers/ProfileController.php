@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class ProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,13 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $role =   Role::find(2);
-
-        $users = $role->users()->paginate(10);
-
-
-
-        return view('admin.users.index',compact('users'));
+        //
     }
 
     /**
@@ -64,7 +57,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return view('Profile.edit',compact('user'));
     }
 
     /**
@@ -76,7 +69,32 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        if ($request->has('password') && $request->password != "" ){
+            $request->validate([
+                'name'=>'required',
+                'email'=>'required|unique:users',
+                'password'=>'required|same:confirm',
+                'confirm' => 'required'
+            ]);
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->password = $request->password;
+
+            $user->save();
+            return back();
+        }
+        else{
+            $request->validate([
+                'name'=>'required',
+                'email'=>'required|unique:users',
+            ]);
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->save();
+            return back();
+
+        }
+
     }
 
     /**
@@ -87,7 +105,6 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        $user->delete();
-        return back();
+        //
     }
 }

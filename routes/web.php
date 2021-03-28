@@ -4,6 +4,7 @@ use App\Http\Controllers\categoryController;
 use App\Http\Controllers\itemController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\ProfileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +28,14 @@ Route::group(['prefix'=>'Admin','as'=>'Admin.','middleware'=> ['role:admin']], f
     Route::resource('/users',\App\Http\Controllers\UserController::class);
     Route::resource('/comments',\App\Http\Controllers\CommentController::class);
 });
+
+//profile controller
+Route::group(['middleware'=>'auth'],function (){
+Route::get('/profile/edit/{user}',[ProfileController::class,'edit']);
+Route::post('/profile/{user}',[ProfileController::class,'update']);
+
+});
+//profile controller
 
 Route::resource('category',categoryController::class);
 Route::resource('item',itemController::class);
