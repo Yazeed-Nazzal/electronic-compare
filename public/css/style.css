@@ -1,3 +1,6 @@
+body{
+    background-color: #fff;
+}
 .Undrow-Img
 {
     background-position: center;
@@ -13,3 +16,87 @@
 {
     font-size: 70px;
 }
+
+/* start home page style */
+.nav_logo{
+    width:100px;
+    height:70px;
+    border-radius: 5px;
+}
+.dropdown-item{
+    color:#b58900
+}
+@media (min-width: 768px){
+    .navbar-expand-md .navbar-nav .dropdown-menu {
+        position: absolute;
+        top: 65px;
+        left: -22px;
+    }
+}
+.navbar-light .navbar-nav .nav-link {
+    color:#b58900
+}
+.category_title,
+.latest_title{
+    text-align: center;
+    margin-top:40px;
+}
+.all_category{
+    margin-top:50px;
+}
+.all_category .category{
+    text-align: center;
+}
+.all_category .category i{
+    font-size:50px;
+    color:#002b36;
+}
+.all_category .category h6{
+    margin-top:20px;
+    font-size: 30px;
+    color:#b58900;
+}
+.welcome .card{ 
+    margin:10px;
+    border-radius: 15px;
+    border:none;
+    box-shadow:  1px 1px 10px #002b36;
+}
+.welcome .card img{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.footer{
+    background-color: #002b36;
+    min-height:200px;
+    margin-top:50px;
+}
+.footer_log{
+    width:120px;
+    height:120px;
+    margin:40px;
+    border-radius:10px;
+}
+.footer_category{
+    margin:30px;
+    text-align: center;
+}
+.footer_category h4{
+    font-size:30px;
+    color:#b58900;
+}
+.footer_category ul{
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+.footer_category ul li{
+    font-size: 20px;;
+}
+.footer_category ul li a{
+    text-decoration: none;
+}
+.footer_category ul li a:hover{
+    color:#b58900
+}
+/* end home page style */
