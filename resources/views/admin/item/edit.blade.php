@@ -11,6 +11,8 @@
             @method("PUT")
             <label>Name</label>
             <input type="text" name="item_name" value="{{$item->item_name}}" placeholder="Enter Item Name" class="form-control" >
+            <label>Description</label>
+            <textarea type="text" name="description"     placeholder="Enter Item Name" class="form-control" >{{$item->description}}</textarea>
             <label>Price</label>
             <input type="number" name="price" value="{{$item->price}}" min="1.0" placeholder="Enter price" class="form-control">
             <label>Category</label>

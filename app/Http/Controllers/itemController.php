@@ -34,6 +34,7 @@ class itemController extends Controller
         // insert item data in item table
         $item = Item::create([
                 'item_name'=>$request->item_name,
+                'description' => $request->description,
                 'price'=>$request->price,
                 'category_id'=>$request->category_id,
         ]);
@@ -88,6 +89,7 @@ class itemController extends Controller
 
         $item->update([
             'item_name'   => $request->item_name,
+            'description' => $request->description,
             'price'       => $request->price,
             'category_id' => $request->category_id,
         ]);

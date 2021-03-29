@@ -10,6 +10,8 @@
             @csrf
             <label>Name</label>
             <input type="text" name="item_name" placeholder="Enter Item Name" class="form-control" >
+            <label>Description</label>
+            <textarea type="text" name="description" placeholder="Enter Item Name" class="form-control" ></textarea>
             <label>Price</label>
             <input type="number" name="price" min="1.0" placeholder="Enter price" class="form-control">
             <label>Category</label>
