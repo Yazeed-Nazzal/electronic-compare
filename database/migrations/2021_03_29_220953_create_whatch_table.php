@@ -13,7 +13,7 @@ class CreateWhatchTable extends Migration
      */
     public function up()
     {
-        Schema::create('whatch', function (Blueprint $table) {
+        Schema::create('watchs', function (Blueprint $table) {
             $table->id();
             $table->integer('item_id')->unsigned();
             $table->string('battery');

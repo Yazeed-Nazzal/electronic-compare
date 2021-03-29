@@ -15,7 +15,7 @@
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"  rel="stylesheet">
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        
+
         <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
         <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
         <link href="{{asset('css/style.css')}}" rel="stylesheet">
@@ -40,18 +40,18 @@
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
-                    @guest
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Category
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Laptop</a>
-                                <a class="dropdown-item" href="#">Mobile</a>
-                                <a class="dropdown-item" href="#">smart watch</a>
-                                <a class="dropdown-item" href="#">Headphones</a>
-                            </div>
-                        </li>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/category/laptop">Laptop</a>
+                            <a class="dropdown-item"  href="/category/phone">Mobile</a>
+                            <a class="dropdown-item"  href="/category/watch">smart watch</a>
+                            <a class="dropdown-item"  href="/category/headphone">Headphones</a>
+                        </div>
+                    </li>
+                    @guest
                         @if (Route::has('login'))
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -63,7 +63,7 @@
                                 <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
                         @endif
-                      
+
                     @else
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('home') }}">Home</a>
@@ -96,7 +96,7 @@
     @yield("content")
 
 
-    <script src="{{asset('js/app.js') }}"></script> 
+    <script src="{{asset('js/app.js') }}"></script>
       <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
       <script src="{{asset('js/owl.carousel.min.js')}}"></script>
       <script>

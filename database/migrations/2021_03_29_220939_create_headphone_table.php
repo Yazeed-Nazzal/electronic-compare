@@ -13,7 +13,7 @@ class CreateHeadphoneTable extends Migration
      */
     public function up()
     {
-        Schema::create('headphone', function (Blueprint $table) {
+        Schema::create('headphones', function (Blueprint $table) {
             $table->id();
             $table->integer('item_id')->unsigned();
             $table->enum('type',['Bluetooth','Wire']);

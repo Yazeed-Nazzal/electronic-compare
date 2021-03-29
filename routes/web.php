@@ -5,6 +5,7 @@ use App\Http\Controllers\itemController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\user\userCategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,15 +28,14 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::group(['prefix'=>'Admin','as'=>'Admin.','middleware'=> ['role:admin']], function() {
     Route::resource('/users',\App\Http\Controllers\UserController::class);
     Route::resource('/comments',\App\Http\Controllers\CommentController::class);
+    //profile controller
+    Route::resource('category',categoryController::class);
+    Route::resource('item',itemController::class);
 });
 
 //profile controller
 Route::group(['middleware'=>'auth'],function (){
-Route::get('/profile/edit/{user}',[ProfileController::class,'edit']);
-Route::post('/profile/{user}',[ProfileController::class,'update']);
-
+    Route::get('/category/{name}',[userCategoryController::class,'index']);
+    Route::get('/profile/edit/{user}',[ProfileController::class,'edit']);
+    Route::post('/profile/{user}',[ProfileController::class,'update']);
 });
-//profile controller
-
-Route::resource('category',categoryController::class);
-Route::resource('item',itemController::class);
