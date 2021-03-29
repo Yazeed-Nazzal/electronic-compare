@@ -19,6 +19,11 @@
         <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
         <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
         <link href="{{asset('css/style.css')}}" rel="stylesheet">
+        <style>
+            .backgroung_home_user{
+                background-color: #fff;
+            }
+        </style>
     </head>
     <body class="antialiased">
 

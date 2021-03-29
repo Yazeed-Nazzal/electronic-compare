@@ -29,8 +29,6 @@ Route::group(['prefix'=>'Admin','as'=>'Admin.','middleware'=> ['role:admin']], f
     Route::resource('/users',\App\Http\Controllers\UserController::class);
     Route::resource('/comments',\App\Http\Controllers\CommentController::class);
     //profile controller
-    Route::resource('category',categoryController::class);
-    Route::resource('item',itemController::class);
 });
 
 //profile controller
@@ -39,3 +37,5 @@ Route::group(['middleware'=>'auth'],function (){
     Route::get('/profile/edit/{user}',[ProfileController::class,'edit']);
     Route::post('/profile/{user}',[ProfileController::class,'update']);
 });
+Route::resource('category',categoryController::class);
+Route::resource('item',itemController::class);
