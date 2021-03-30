@@ -2,24 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="269d7982-b23f-403a-8f9e-cb9313af5222" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/items/manage/headPhones.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/items/manage/laptops.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/items/manage/phones.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/items/manage/watches.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/itemController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/itemController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/user/userCategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/user/userCategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Item.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Item.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/items/edit/edit-headPhone.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/items/edit/edit-headPhone.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/items/edit/edit-laptop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/items/edit/edit-laptop.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/items/edit/edit-phone.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/items/edit/edit-phone.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/items/edit/edit-watch.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/items/edit/edit-watch.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/items/manage/manage-headPhones.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/items/manage/manage-laptops.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/items/manage/manage-phones.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/items/manage/manage-watches.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
