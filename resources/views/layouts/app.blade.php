@@ -71,7 +71,17 @@
                             <a class="nav-link" href="{{ route('Admin.comments.index') }}">Manage Comments</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('item.index') }}">Manage Item</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                               Manage Items
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Manage Laptops</a>
+                                <a class="dropdown-item" href="#">Manage Phones</a>
+                                <a class="dropdown-item" href="#">Manage Watches</a>
+                                <a class="dropdown-item" href="#">Manage HeadPhone</a>
+                            </div>
+                        </li>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('Admin.users.index') }}">Manage Users</a>
