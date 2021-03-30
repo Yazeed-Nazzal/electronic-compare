@@ -76,10 +76,10 @@
                                Manage Items
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Manage Laptops</a>
-                                <a class="dropdown-item" href="#">Manage Phones</a>
-                                <a class="dropdown-item" href="#">Manage Watches</a>
-                                <a class="dropdown-item" href="#">Manage HeadPhone</a>
+                                <a class="dropdown-item" href="/items/laptop">Manage Laptops</a>
+                                <a class="dropdown-item" href="/items/phone">Manage Phones</a>
+                                <a class="dropdown-item" href="/items/watch">Manage Watches</a>
+                                <a class="dropdown-item" href="/items/headphone">>Manage HeadPhone</a>
                             </div>
                         </li>
                         </li>

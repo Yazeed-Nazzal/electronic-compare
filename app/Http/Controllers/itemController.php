@@ -11,26 +11,49 @@ use Illuminate\Support\Facades\File;
 
 class itemController extends Controller
 {
-    
-    public function index()
+
+    public function index($name)
     {
 
-         $items = Item::with("images")->get();
-        return view('admin.item.index',compact('items'));
+//         $items = Item::with("images")->get();
+//        return view('admin.item.index',compact('items'));
+        switch ($name){
+            case 'laptop':
+                $items = Item::where('category_id',1)->with('laptop','images')->get();
+                return view('admin.items.manage.laptops',compact('items'));
+                break;
+            case 'phone':
+                $items = Item::where('category_id',2)->with('phone')->get();
+                return view('admin.items.manage.phones',compact('items'));
+                break;
+            case 'watch':
+                $items = Item::where('category_id',3)->with('watche')->get();
+                return view('admin.items.manage.watches',compact('items'));
+                break;
+            case 'headphone':
+                $items = Item::where('category_id',4)->with('headphone')->get();
+                return view('admin.items.manage.headPhones',compact('items'));
+                break;
+            default:
+                abort('404');
+        }
+
+
+
     }
 
-  
+
     public function create()
     {
         $categories = Category::all();
         return view('admin.item.create',compact('categories'));
     }
 
-    
+
     public function store(Request $request)
     {
 
-        
+
         // insert item data in item table
         $item = Item::create([
                 'item_name'=>$request->item_name,
@@ -50,28 +73,28 @@ class itemController extends Controller
                 'item_id'=>$item->id,
             ]);
         }
-        
+
         // insert image in images table
         if($request->hasFile('image_category')){
             foreach($request->image_category as $image){
             $image_name = rand(1,99999) . '-' .$image->getClientOriginalName();
-            $image->move(public_path('uploads'), $image_name);  
+            $image->move(public_path('uploads'), $image_name);
             $item->images()->create(array('name' => $image_name));
             }
         }
 
         session()->flash('success','Add Item Successfully');
-        
+
         return redirect()->route('item.index');
         }
 
-    
+
     public function show($id)
     {
         //
     }
 
-    
+
     public function edit($id)
     {
        $item = Item::with(['images','category','features'])->where('id',$id)->first();
@@ -81,11 +104,11 @@ class itemController extends Controller
        return view('admin.item.edit',compact(["item","categories"]));
     }
 
-   
+
     public function update(Request $request, Item $item)
     {
 
-    
+
 
         $item->update([
             'item_name'   => $request->item_name,
@@ -106,15 +129,15 @@ class itemController extends Controller
 
             foreach($request->image_category as $image){
              $image_category = rand(1,99999) . '-' .$image->getClientOriginalName();
-             $image->move(public_path('uploads'), $image_category);  
+             $image->move(public_path('uploads'), $image_category);
              $item->images()->create(array('name' => $image_category));
-     
+
             }
         }
 
 
         $all_feature = $request->group_a;
-        // edit  feature 
+        // edit  feature
         for($i=0;$i<count($all_feature);$i++){
             Feature::where('id',$item->id)->update([
                 'feature_name'=>$all_feature[$i]['feature_name'],

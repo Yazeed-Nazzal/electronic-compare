@@ -38,4 +38,5 @@ Route::group(['middleware'=>'auth'],function (){
     Route::post('/profile/{user}',[ProfileController::class,'update']);
 });
 Route::resource('category',categoryController::class);
+Route::get('/items/{name}',[itemController::class,'index']);
 Route::resource('item',itemController::class);

@@ -17,19 +17,19 @@ class userCategoryController extends Controller
     {
         switch ($name){
             case 'laptop':
-                $laptops = Item::where('category_id',1)->with('laptops');
+                $laptops = Item::where('category_id',1)->with('laptops')->get();
                 return view('category.laptops',compact('laptops'));
                 break;
             case 'phone':
-                $phones = Item::where('category_id',2)->with('phones');
+                $phones = Item::where('category_id',2)->with('phones')->get();
                 return view('category.phones',compact('phones'));
                 break;
             case 'watch':
-                $watches = Item::where('category_id',3)->with('watches');
+                $watches = Item::where('category_id',3)->with('watches')->get();
                 return view('category.watches',compact('watches'));
                 break;
             case 'headphone':
-                $headphones = Item::where('category_id',4)->with('headphones');
+                $headphones = Item::where('category_id',4)->with('headphones')->get();
                 return view('category.headPhones',compact('headphones'));
                 break;
             default:
