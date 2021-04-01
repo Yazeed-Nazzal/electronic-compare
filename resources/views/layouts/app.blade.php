@@ -27,6 +27,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"  rel="stylesheet">
     <!-- Styles -->
+    
 </head>
 <body>
 <div id="app">
@@ -114,5 +115,25 @@
         @yield('content')
     </main>
 </div>
+
+
+<script src="{{asset('js/jquery-3.5.1.min.js')}}"></script>
+<script src="{{asset('js/jquery.repeater.min.js')}}"></script>
+<script src="{{asset('js/repeater.js')}}"></script>
+
+<script>
+   
+        $('.repeater-default').repeater({
+        show: function () {
+            $(this).slideDown();
+        },
+        hide: function (deleteElement) {
+            if (confirm('Are you sure you want to delete this element?')) {
+            $(this).slideUp(deleteElement);
+            }
+        }
+        });
+
+</script>
 </body>
 </html>

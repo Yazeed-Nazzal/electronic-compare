@@ -4,7 +4,12 @@ namespace App\Http\Controllers\user;
 
 use App\Http\Controllers\Controller;
 use App\Models\Item;
+use App\Models\Phone;
+use Illuminate\Support\Facades\File;
+use App\Models\Image;
+use App\Models\Feature;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class userCategoryController extends Controller
 {
@@ -45,7 +50,8 @@ class userCategoryController extends Controller
      */
     public function create()
     {
-        //
+       
+
     }
 
     /**
@@ -56,7 +62,7 @@ class userCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      
     }
 
     /**

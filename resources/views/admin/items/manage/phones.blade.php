@@ -14,7 +14,7 @@
         @endif
         <div class="row mt-4">
             <div class="col-lg-12">
-                <a class="btn btn-primary float-right mb-5" href="{{route('item.create')}}">Add Item</a>
+                <a class="btn btn-primary float-right mb-5" href="{{route('create.item','phone')}}">Add Item</a>
                 <table class="table table-dark">
                     <thead>
                     <tr>
@@ -38,19 +38,15 @@
                             <td>{{$item->item_name}}</td>
                             <td>{{$item->price}} JOD</td>
                             <td>{{$item->phone->ram}} </td>
-                            <td>{{$item->phone->front-cam}} </td>
-                            <td>{{$item->phone->rear-cam}} </td>
-                            <td>{{$item->phone->phone->storage}} </td>
-                            <td>{{$item->phone->phone->battery}} </td>
-                            <td>{{$item->phone->phone->screen}} </td>
+                            <td>{{$item->phone->front_cam}} </td>
+                            <td>{{$item->phone->rear_cam}} </td>
+                            <td>{{$item->phone->storage}} </td>
+                            <td>{{$item->phone->battery}} </td>
+                            <td>{{$item->phone->screen}} </td>
                             <td>{{$item->created_at->toDateString()}}</td>
                             <td class="d-flex">
-                                <form action="{{route('item.destroy',$item->id)}}" method="POST">
-                                    @csrf
-                                    @method('delete')
-                                    <button class="btn btn-danger">delete</button>
-                                </form>
-                                <a class="btn btn-success ml-3" href="{{route('item.edit',$item->id)}}">Edit Item</a>
+                                <a class="btn btn-danger" href="{{route('destroy.item',['name'=>'phone','id'=>$item->id])}}">delete</a>
+                                <a class="btn btn-success ml-3" href="{{route('edit.item',['name'=>'phone','id'=>$item->id])}}">Edit Item</a>
                             </td>
                         </tr>
                     @endforeach

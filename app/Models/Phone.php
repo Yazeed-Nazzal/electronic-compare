@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Phone extends Model
 {
     use HasFactory;
+
+    protected $table = "phones";
+
+    protected $guarded = [];
+
+    public function item(){
+        return $this->belongsTo('App\Models\Item','item_id');
+    }
 }

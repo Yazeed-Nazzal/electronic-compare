@@ -24,13 +24,13 @@ class Item extends Model
     public function images(){
         return $this->morphMany('App\Models\Image','imageable');
     }
-    public function laptop (){
+    public function laptop(){
         return $this->hasOne(Laptop::class,'item_id');
     }
-    public function phone (){
+    public function phone(){
         return $this->hasOne(Phone::class,'item_id');
     }
-    public function watche (){
+    public function watche(){
         return $this->hasOne(Watch::class,'item_id');
     }
     public function headphone(){
