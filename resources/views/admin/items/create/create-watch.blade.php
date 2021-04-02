@@ -3,11 +3,11 @@
 @section('content')
 
 <div class="container">
-    <h1 class="text-center mb-3">Add Phone</h1>
+    <h1 class="text-center mb-3">Add Watch</h1>
     <div class="row justify-content-center">
     
         <div class="col-lg-8">
-        <form class="form repeater-default repeater" action="{{route('store.item','phone')}}" method="POST"  enctype="multipart/form-data">
+        <form class="form repeater-default repeater" action="{{route('store.item','watch')}}" method="POST"  enctype="multipart/form-data">
             @csrf
             <label>Name</label>
             <input type="text" name="name" placeholder="Enter Phone Name"  required class="form-control" >
@@ -21,26 +21,21 @@
             <label>Company</label>
             <input type="text" name="company" min="1.0" placeholder="Enter Company Made" required class="form-control">
            
-            <label>Front Camera</label>
-            <input type="number" name="front_camera" min="1.0" placeholder="Enter MP Camera" required class="form-control">
-            
-            <label>Rare Camera</label>
-            <input type="number" name="rear_camera" min="1.0" placeholder="Enter MP Camera" required class="form-control">
-           
-            <label>Storage</label>
-            <input type="number" name="storage" min="1.0" placeholder="Enter size storage" required class="form-control">
-            
-            <label>Screen Size</label>
-            <input type="number" name="screen_size" min="1.0" placeholder="Enter Screen Size" required class="form-control">
-           
             <label>Battery</label>
             <input type="number" name="battery" min="1.0" placeholder="Enter Capacity Bettery" required class="form-control">
            
-            <label>Ram</label>
-            <input type="number" name="ram" min="1.0" placeholder="Enter ram size" required class="form-control">
+            <label>Waterproof</label>
+            <select name="waterproof" id="waterproof" class="form-control">
+                <option value="1">Yes</option>
+                <option value="2">No</option>
+            </select>
+
+            <label>Calling</label>
+            <select name="calling" id="calling" class="form-control">
+                <option value="1">Yes</option>
+                <option value="2">No</option>
+            </select>
           
-          
-           
             <div> 
                 <label>Image Item</label>
                 <input type="file" name="image_category[]" class="form-control" multiple>
@@ -78,6 +73,5 @@
         </form> 
     </div>
 </div>
-
 
 @endsection

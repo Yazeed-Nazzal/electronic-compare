@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="container">
-        <h1 class="text-center">Item home</h1>
+        <h1 class="text-center">Manage Watch</h1>
         @if(session()->has('success'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 {{session()->get('success')}}
@@ -14,7 +14,7 @@
         @endif
         <div class="row mt-4">
             <div class="col-lg-12">
-                <a class="btn btn-primary float-right mb-5" href="{{route('item.create')}}">Add Item</a>
+                <a class="btn btn-primary float-right mb-5" href="{{route('create.item','watch')}}">Add Item</a>
                 <table class="table table-dark">
                     <thead>
                     <tr>
@@ -34,25 +34,21 @@
                             <td><img src="{{url('uploads/'.$item->images[0]->name)}}" style="width:100px;height:100px" alt=""></td>
                             <td>{{$item->item_name}}</td>
                             <td>{{$item->price}} JOD</td>
-                            <td>{{$item->whatch->battery}}</td>
-                            @if ($item->whatch->waterproof)
-                                WaterProof supported
+                            <td>{{$item->watch->battery}}</td>
+                            @if ($item->watch->waterproof)
+                            <td>WaterProof supported</td>
                             @else
-                                WaterProof Not supported
+                            <td>WaterProof Not supported</td>
                             @endif
-                            @if ($item->whatch->calling)
-                                Calling supported
+                            @if ($item->watch->calling)
+                            <td>Calling supported</td>
                             @else
-                                Calling Not supported
+                            <td>Calling Not supported</td>
                             @endif
                             <td>{{$item->created_at->toDateString()}}</td>
                             <td class="d-flex">
-                                <form action="{{route('item.destroy',$item->id)}}" method="POST">
-                                    @csrf
-                                    @method('delete')
-                                    <button class="btn btn-danger">delete</button>
-                                </form>
-                                <a class="btn btn-success ml-3" href="{{route('item.edit',$item->id)}}">Edit Item</a>
+                                <a href="{{route('destroy.item',['name'=>'watch' ,'id'=>$item->id])}}" class="btn btn-danger">Delete</a>
+                                <a class="btn btn-success ml-3" href="{{route('edit.item',['name'=>'watch' ,'id'=>$item->id])}}">Edit</a>
                             </td>
                         </tr>
                     @endforeach

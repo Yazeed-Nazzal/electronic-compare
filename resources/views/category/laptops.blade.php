@@ -8,9 +8,9 @@
                 <div class="col-md-3">
                     <div class="item">
                         <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" style="height:200px" src="https://images.pexels.com/photos/6097871/pexels-photo-6097871.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Card image cap">
+                            <img class="card-img-top" style="height:200px" src="{{url('uploads/'.$laptop->images[0]->name)}}" alt="Card image cap">
                             <div class="card-body">
-                                <h5 class="card-title">{{$laptop->name}}</h5>
+                                <h5 class="card-title">{{$laptop->item_name}}</h5>
                                 <span>Price : {{$laptop->price}}$</span>
                                 <br><br>
                                 <a href="#" class="btn btn-primary">show More</a>

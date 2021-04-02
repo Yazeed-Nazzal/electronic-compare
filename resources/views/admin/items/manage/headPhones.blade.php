@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="container">
-        <h1 class="text-center">Item home</h1>
+        <h1 class="text-center">Manage Headphones</h1>
         @if(session()->has('success'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 {{session()->get('success')}}
@@ -14,7 +14,7 @@
         @endif
         <div class="row mt-4">
             <div class="col-lg-12">
-                <a class="btn btn-primary float-right mb-5" href="{{route('item.create')}}">Add Item</a>
+                <a class="btn btn-primary float-right mb-5" href="{{route('create.item','headphone')}}">Add Item</a>
                 <table class="table table-dark">
                     <thead>
                     <tr>
@@ -41,12 +41,8 @@
 
                             <td>{{$item->created_at->toDateString()}}</td>
                             <td class="d-flex">
-                                <form action="{{route('item.destroy',$item->id)}}" method="POST">
-                                    @csrf
-                                    @method('delete')
-                                    <button class="btn btn-danger">delete</button>
-                                </form>
-                                <a class="btn btn-success ml-3" href="{{route('item.edit',$item->id)}}">Edit Item</a>
+                                <a href="{{route('destroy.item',['name'=>'headphone' , 'id' =>$item->id])}}" class="btn btn-danger">Delete</a>
+                                <a href="{{route('edit.item',['name'=>'headphone' , 'id' =>$item->id])}}" class="btn btn-success ml-3" >Edit Item</a>
                             </td>
                         </tr>
                     @endforeach

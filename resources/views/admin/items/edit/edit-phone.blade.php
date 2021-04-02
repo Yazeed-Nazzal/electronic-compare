@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h1 class="text-center mb-3">Create Item</h1>
+    <h1 class="text-center mb-3">Edit Phone</h1>
     <div class="row justify-content-center">
     
         <div class="col-lg-8">

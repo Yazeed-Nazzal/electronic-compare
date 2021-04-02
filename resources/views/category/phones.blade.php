@@ -5,12 +5,12 @@
         <h1 class="latest_title">Mobiles</h1>
         <div class="row  mt-2 welcome">
             @foreach($phones as $phone )
-                <div class="col-md-3">
+                <div class="col-lg-4">
                     <div class="item">
                         <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" style="height:200px" src="https://images.pexels.com/photos/6097871/pexels-photo-6097871.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Card image cap">
+                            <img class="card-img-top" style="height:200px" src="{{url('uploads/'.$phone->images[0]->name)}}" alt="Card image cap">
                             <div class="card-body">
-                                <h5 class="card-title">{{$phone->name}}</h5>
+                                <h5 class="card-title">{{$phone->item_name}}</h5>
                                 <span>Price : {{$phone->price}}$</span>
                                 <br><br>
                                 <a href="#" class="btn btn-primary">show More</a>

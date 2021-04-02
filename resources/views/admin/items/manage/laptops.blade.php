@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="container">
-        <h1 class="text-center">Item home</h1>
+        <h1 class="text-center">Manage Laptops</h1>
         @if(session()->has('success'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 {{session()->get('success')}}

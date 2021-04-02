@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Headphone extends Model
 {
     use HasFactory;
+
+    protected $table = "headphones";
+
+    protected $guarded = [];
 }

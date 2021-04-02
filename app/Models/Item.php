@@ -30,7 +30,7 @@ class Item extends Model
     public function phone(){
         return $this->hasOne(Phone::class,'item_id');
     }
-    public function watche(){
+    public function watch(){
         return $this->hasOne(Watch::class,'item_id');
     }
     public function headphone(){
