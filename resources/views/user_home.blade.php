@@ -107,25 +107,25 @@
           <div class="col-lg-3">
             <div class="category">
                 <i class="fas fa-laptop"></i>
-                <h6>Laptop</h6>
+                <h6><a href="/category/laptop">Laptop</a></h6>
             </div>
           </div>
           <div class="col-lg-3">
             <div class="category">
                 <i class="fas fa-mobile-alt"></i>
-                <h6>Mobile</h6>
+                <h6><a href="/category/phone">Mobile</a></h6>
             </div>
           </div>
           <div class="col-lg-3">
             <div class="category">
                 <i class="fas fa-headphones"></i>
-                <h6>Head Phones</h6>
+                <h6><a href="/category/headphone">Head Phones</a></h6>
             </div>
           </div>
           <div class="col-lg-3">
               <div class="category">
                  <i class="far fa-clock"></i>
-                 <h6>Smart Watch</h6>
+                 <h6><a href="/category/watch">Smart Watch</a></h6>
               </div>
           </div>
         </div>
@@ -141,10 +141,10 @@
                     <div class="footer_category">
                         <h4>Category</h4>
                         <ul>
-                            <li><a href="#">Labtop</a></li>
-                            <li><a href="#">Phone</a></li>
-                            <li><a href="#">Smart Watch</a></li>
-                            <li><a href="#">Head Phones</a></li>
+                            <li><a href="/category/laptop">Labtop</a></li>
+                            <li><a href="/category/phone">Phone</a></li>
+                            <li><a href="/category/watch">Smart Watch</a></li>
+                            <li><a href="/category/headphone">Head Phones</a></li>
                         </ul>
                     </div>
                 </div>

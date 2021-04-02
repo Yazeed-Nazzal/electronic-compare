@@ -8,5 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class Laptop extends Model
 {
     use HasFactory;
-
 }

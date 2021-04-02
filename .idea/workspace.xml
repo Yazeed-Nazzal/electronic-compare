@@ -3,7 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="269d7982-b23f-403a-8f9e-cb9313af5222" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Laptop.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/LaptopFactory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/dropzone.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/dropzone.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/category/headPhones.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/category/headPhones.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/category/laptops.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/category/laptops.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/category/phones.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/category/phones.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/category/watches.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/category/watches.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user_home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_home.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +149,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Javascript training" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -181,6 +188,10 @@
       <workItem from="1617054760013" duration="7402000" />
       <workItem from="1617132082589" duration="947000" />
       <workItem from="1617133076437" duration="4000" />
+      <workItem from="1617187018528" duration="163000" />
+      <workItem from="1617221102672" duration="3604000" />
+      <workItem from="1617288580508" duration="33000" />
+      <workItem from="1617304929176" duration="5008000" />
     </task>
     <servers />
   </component>
