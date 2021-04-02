@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Laptop;
 use Illuminate\Http\Request;
 use App\Models\Feature;
 use App\Models\Headphone;
@@ -41,10 +42,10 @@ class itemController extends Controller
 
 
     public function create($name){
-        
+
         switch ($name){
             case 'laptop':
-              
+                return view('admin.items.create.create-laptop');
                 break;
             case 'phone':
                 return view('admin.items.create.create-phone');
@@ -62,10 +63,50 @@ class itemController extends Controller
 
 
     public function store(Request $request, $name){
-        
+
         switch ($name){
             case 'laptop':
-                
+                $item = Item::create([
+                    'item_name'=>$request->name,
+                    'price'=>$request->price,
+                    'description'=>$request->description,
+                    'company'=>$request->company,
+                    'category_id'=>1
+                ]);
+
+                Laptop::create([
+                    "ram"=>$request->ram,
+                    "storage"=>$request->storage,
+                    'gpu'=>$request->gpu,
+                    'processor'=>$request->processor,
+                    'item_id'=>$item->id,
+                ]);
+
+                $all_feature = $request->group_a;
+
+                // insert all feature to single item in feature table
+                for($i=0;$i<count($all_feature);$i++){
+                    Feature::create([
+                        'feature_name'=>$all_feature[$i]['feature_name'],
+                        'feature_value'=>$all_feature[$i]['feature_value'],
+                        'item_id'=>$item->id,
+                    ]);
+                }
+
+
+                if($request->hasFile('image_category')){
+                    foreach($request->image_category as $image){
+                        $image_name = rand(1,99999) . '-' .$image->getClientOriginalName();
+                        $image->move(public_path('uploads'), $image_name);
+                        $item->images()->create(array('name' => $image_name));
+                    }
+                }
+
+                session()->flash('success','Add phone Successfully');
+
+                return redirect()->route('index.item','laptop');
+
+
                 break;
             case 'phone':
 
@@ -99,7 +140,7 @@ class itemController extends Controller
                     ]);
                 }
 
-               
+
                 if($request->hasFile('image_category')){
                     foreach($request->image_category as $image){
                     $image_name = rand(1,99999) . '-' .$image->getClientOriginalName();
@@ -141,7 +182,7 @@ class itemController extends Controller
                     ]);
                 }
 
-                
+
                 if($request->hasFile('image_category')){
                     foreach($request->image_category as $image){
                     $image_name = rand(1,99999) . '-' .$image->getClientOriginalName();
@@ -149,9 +190,9 @@ class itemController extends Controller
                     $item->images()->create(array('name' => $image_name));
                     }
                 }
-  
+
                   session()->flash('success','Add Watch Successfully');
-  
+
                   return redirect()->route('index.item','watch');
                 break;
             case 'headphone':
@@ -181,7 +222,7 @@ class itemController extends Controller
                     ]);
                 }
 
-                
+
                 if($request->hasFile('image_category')){
                     foreach($request->image_category as $image){
                     $image_name = rand(1,99999) . '-' .$image->getClientOriginalName();
@@ -189,15 +230,15 @@ class itemController extends Controller
                     $item->images()->create(array('name' => $image_name));
                     }
                 }
-  
+
                   session()->flash('success','Add Headphone Successfully');
-  
+
                   return redirect()->route('index.item','headphone');
                 break;
             default:
                 abort('404');
         }
-        
+
     }
 
 
@@ -211,7 +252,8 @@ class itemController extends Controller
 
         switch ($name){
             case 'laptop':
-             
+                $item = Item::with(['images','laptop','features'])->where('id',$id)->first();
+                return view("admin.items.edit.edit-laptop",compact('item'));
                 break;
             case 'phone':
                  $item = Item::with(['images','phone','features'])->where('id',$id)->first();
@@ -228,7 +270,7 @@ class itemController extends Controller
             default:
                 abort('404');
         }
-      
+
     }
 
 
@@ -236,7 +278,50 @@ class itemController extends Controller
 
         switch ($name){
             case 'laptop':
-            
+                $item = Item::find($id);
+                $item->update([
+                    'item_name'=>$request->name,
+                    'price'=>$request->price,
+                    'description'=>$request->description,
+                    'company'=>$request->company,
+                    'category_id'=>1
+                ]);
+
+                Laptop::where('item_id',$id)->update([
+                    "ram"=>$request->ram,
+                    "storage"=>$request->storage,
+                    "gpu"   => $request->gpu,
+                    "processor" => $request->processor
+                ]);
+                if($request->hasFile('image_category')){
+                    $images_item = Image::where('imageable_id',$item->id)->get();
+                    $count = $images_item->count();
+                    for($i=0; $i < $count ;$i++){
+                        $image_path = public_path('uploads') .'\\'. $images_item[$i]['name'];
+                        File::delete($image_path);
+                    }
+                    $item->images()->where('imageable_id',$item->id)->delete();
+
+                    foreach($request->image_category as $image){
+                        $image_category = rand(1,99999) . '-' .$image->getClientOriginalName();
+                        $image->move(public_path('uploads'), $image_category);
+                        $item->images()->create(array('name' => $image_category));
+
+                    }
+                }
+                $all_feature = $request->group_a;
+                // edit  feature
+                for($i=0;$i<count($all_feature);$i++){
+                    Feature::where('id',$item->id)->update([
+                        'feature_name'=>$all_feature[$i]['feature_name'],
+                        'feature_value'=>$all_feature[$i]['feature_value'],
+                        'item_id'=>$item->id,
+                    ]);
+                }
+
+                session()->flash('success','Update Phone Successfully');
+
+                return redirect()->route('index.item','laptop');
                 break;
             case 'phone':
                 $item = Item::find($id);
@@ -258,7 +343,7 @@ class itemController extends Controller
                     "battery"=>$request->battery,
                     'item_id'=>$item->id,
                 ]);
-                    
+
                 // edit image
                 if($request->hasFile('image_category')){
                     $images_item = Image::where('imageable_id',$item->id)->get();
@@ -308,7 +393,7 @@ class itemController extends Controller
                     "battery"=>$request->battery,
                     'item_id'=>$item->id,
                 ]);
-                    
+
                 // edit image
                 if($request->hasFile('image_category')){
                     $images_item = Image::where('imageable_id',$item->id)->get();
@@ -357,7 +442,7 @@ class itemController extends Controller
                     "battery"=>$request->battery,
                     'item_id'=>$item->id,
                 ]);
-                    
+
                 // edit image
                 if($request->hasFile('image_category')){
                     $images_item = Image::where('imageable_id',$item->id)->get();
@@ -401,6 +486,22 @@ class itemController extends Controller
     public function destroy($name , $id){
 
         if($name == "laptop"){
+            $item = Item::find($id);
+
+            $images = Image::where('imageable_id',$id)->get();
+
+            for($i =0;$i < count($images);$i++){
+                $image_path = public_path('uploads') .'\\'. $images[$i]['name'];
+                File::delete($image_path);
+            }
+
+            $item->images()->where('imageable_id',$item->id)->delete();
+
+            $item->delete();
+
+            session()->flash('success','Delete Phone Successfully');
+
+            return redirect()->route('index.item','laptop');
 
         }else if($name == "phone"){
 

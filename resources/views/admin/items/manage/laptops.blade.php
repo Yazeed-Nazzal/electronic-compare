@@ -14,7 +14,7 @@
         @endif
         <div class="row mt-4">
             <div class="col-lg-12">
-                <a class="btn btn-primary float-right mb-5" href="{{route('item.create')}}">Add Item</a>
+                <a class="btn btn-primary float-right mb-5"href="{{route('create.item','laptop')}}">Add Item</a>
                 <table class="table table-dark">
                     <thead>
                     <tr>
@@ -32,8 +32,7 @@
                     <tbody>
                     @foreach($items as $item)
                         <tr>
-{{--                            <img src="{{url('uploads/'.$item->images[0]->name)}}" style="width:100px;height:100px" alt="">--}}
-                            <td></td>
+                            <td> <img src="{{url('uploads/'.$item->images[0]->name)}}" style="width:100px;height:100px" alt=""></td>
                             <td>{{$item->item_name}}</td>
                             <td>{{$item->price}} JOD</td>
                             <td>{{$item->laptop->ram}}</td>
@@ -43,12 +42,8 @@
 
                             <td>{{$item->created_at->toDateString()}}</td>
                             <td class="d-flex">
-                                <form action="{{route('item.destroy',$item->id)}}" method="POST">
-                                    @csrf
-                                    @method('delete')
-                                    <button class="btn btn-danger">delete</button>
-                                </form>
-                                <a class="btn btn-success ml-3" href="{{route('item.edit',$item->id)}}">Edit Item</a>
+                                <a class="btn btn-danger" href="{{route('destroy.item',['name'=>'laptop','id'=>$item->id])}}">delete</a>
+                                <a class="btn btn-success ml-3" href="{{route('edit.item',['name'=>'laptop','id'=>$item->id])}}">Edit Item</a>
                             </td>
                         </tr>
                     @endforeach

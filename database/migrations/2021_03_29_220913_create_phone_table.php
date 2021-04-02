@@ -17,8 +17,8 @@ class CreatePhoneTable extends Migration
             $table->id();
             $table->integer('item_id')->unsigned();
             $table->string('ram');
-            $table->string('front-cam');
-            $table->string('rear-cam');
+            $table->string('front_cam');
+            $table->string('rear_cam');
             $table->string('storage');
             $table->string('battery');
             $table->string('screen');
