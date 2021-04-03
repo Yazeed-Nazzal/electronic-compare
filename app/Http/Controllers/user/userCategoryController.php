@@ -19,7 +19,27 @@ class userCategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index($name)
-    { 
+    {
+        switch ($name){
+            case 'laptop':
+                $laptops = Item::where('category_id',1)->with('laptops','images')->get();
+                return view('category.laptops',compact('laptops'));
+                break;
+            case 'phone':
+                $phones = Item::where('category_id',2)->with('phone','images')->get();
+                return view('category.phones',compact('phones'));
+                break;
+            case 'watch':
+                $watches = Item::where('category_id',3)->with('watch','images')->get();
+                return view('category.watches',compact('watches'));
+                break;
+            case 'headphone':
+                $headphones = Item::where('category_id',4)->with('headphone','images')->get();
+                return view('category.headPhones',compact('headphones'));
+                break;
+            default:
+                abort('404');
+        }
 
     }
 
