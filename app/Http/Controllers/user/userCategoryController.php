@@ -50,7 +50,7 @@ class userCategoryController extends Controller
      */
     public function create()
     {
-       
+
 
     }
 
@@ -62,7 +62,7 @@ class userCategoryController extends Controller
      */
     public function store(Request $request)
     {
-      
+
     }
 
     /**
