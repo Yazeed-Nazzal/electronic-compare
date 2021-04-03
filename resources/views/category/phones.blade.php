@@ -13,7 +13,7 @@
                                 <h5 class="card-title">{{$phone->item_name}}</h5>
                                 <span>Price : {{$phone->price}}$</span>
                                 <br><br>
-                                <a href="#" class="btn btn-primary">show More</a>
+                                <a href="{{route('phone',$phone->id)}}" class="btn btn-primary">show More</a>
                             </div>
                         </div>
                     </div>

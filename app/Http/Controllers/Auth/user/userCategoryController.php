@@ -17,26 +17,27 @@ class userCategoryController extends Controller
      */
     public function index($name)
     {
-        switch ($name) {
+        switch ($name){
             case 'laptop':
-                $laptops = Item::with('laptops')->get();
+                $laptops = Item::where('category_id',1)->with('laptops','images')->get();
                 return view('category.laptops',compact('laptops'));
                 break;
             case 'phone':
-                $phones = Item::with('phones')->get();
+                $phones = Item::with(['phone','images'])->where('category_id',2)->get();
                 return view('category.phones',compact('phones'));
                 break;
             case 'watch':
-                $watches = Item::with('$watches')->get();
+                $watches = Item::where('category_id',3)->with('watch','images')->get();
                 return view('category.watches',compact('watches'));
                 break;
             case 'headphone':
-                $headphones = Item::with('headphones')->get();
-                return view('headPhones.',compact('headphones'));
+                $headphones = Item::where('category_id',4)->with('headphone','images')->get();
+                return view('category.headPhones',compact('headphones'));
                 break;
             default:
                 abort('404');
         }
+
     }
 
     /**

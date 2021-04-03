@@ -34,7 +34,6 @@
                 <i class="fas fa-comment-dots text-primary"></i>
             </div>
             <p>{{$commentC}}</p>
-
         </div>
     </div>
 </div>

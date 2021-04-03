@@ -4,11 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use Laravelista\Comments\Commentable;
 class Item extends Model
 {
     use HasFactory;
-
+    use Commentable;
     protected $table = "items";
 
     protected $guarded = [];

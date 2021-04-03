@@ -51,7 +51,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="/category/laptop">Laptop</a>
-                            <a class="dropdown-item"  href="/category/phone">Mobile</a>
+                            <a class="dropdown-item"  href="{{url('/category/phone')}}">Mobile</a>
                             <a class="dropdown-item"  href="/category/watch">smart watch</a>
                             <a class="dropdown-item"  href="/category/headphone">Headphones</a>
                         </div>

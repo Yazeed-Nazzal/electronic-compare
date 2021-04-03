@@ -69,7 +69,6 @@
                             <a class="nav-link" href="{{ route('category.index') }}">Manage Category</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('Admin.comments.index') }}">Manage Comments</a>
                         </li>
                         <li class="nav-item">
                         <li class="nav-item dropdown">
