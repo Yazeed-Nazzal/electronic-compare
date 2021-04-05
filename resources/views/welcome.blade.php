@@ -124,5 +124,64 @@
             })
           });
       </script>
+            @yield('script')
+    <script>
+        let totalItem = 0;
+        let item1;
+        let  item2;
+        $(document).on('change','.item-check' ,function (e){
+            if ($(this).prop('checked')){
+                if (totalItem == 0){
+                    item1= $(this).val();
+                    totalItem++;
+                }
+                else if(totalItem == 1) {
+                    item2= $(this).val();
+                    totalItem++;
+                }
+                else {
+                    alert('you cant compare more than 1 item remove one then chose new one')
+                }
+                if (totalItem == 2){
+                    $('.compare-box').show();
+                }
+            }
+            else {
+                if (totalItem ==1){
+                    if ($(this).val() == item1){
+                        item1=""
+                    }
+                }
+                else if (totalItem == 2){
+                    if($(this).val() == item1){
+                        item1 = "";
+                    }
+                    else {
+                        item2 = ""
+                    }
+                }
+
+                totalItem--;
+                $('.compare-box').hide();
+            }
+
+            console.log(item1);
+            console.log("/////")
+            console.log(item2);
+        });
+        $(document).on('click','#compare',function (){
+            if (totalItem != 2){
+                alert('You Should chose 2 item to compare ')
+            }
+            else{
+                if (item1 != "" && item2 != ""){
+                    window.location.href = "http://127.0.0.1:8000/item/compare/"+item1+"/"+item2;
+                }
+            }
+
+
+        });
+
+    </script>
     </body>
 </html>

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\singleItemController;
 use App\Http\Controllers\user\userCategoryController;
+use App\Http\Controllers\compareController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,14 +28,13 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['prefix'=>'Admin','as'=>'Admin.','middleware'=> ['role:admin']], function() {
+    Route::resource('/category',categoryController::class);
     Route::resource('/users',\App\Http\Controllers\UserController::class);
-    // Route::resource('/comments',\App\Http\Controllers\CommentController::class);
-    //profile controller
 });
 
 //profile controller
 Route::group(['middleware'=>'auth'],function (){
-    
+
     Route::get('/profile/edit/{user}',[ProfileController::class,'edit']);
     Route::post('/profile/{user}',[ProfileController::class,'update']);
 
@@ -47,7 +47,16 @@ Route::group(['middleware'=>'auth'],function (){
     Route::post('/items/update/{name}/{id}',[itemController::class,'update'])->name('update.item');
     ################################ End  Item Route ##########################################
 
-   
+    ################################ Start  Compare Route #######################################
+    Route::get('/item/compare/{item1}/{item2}',[compareController::class,'index']);
+    ################################ End  Compare Route #######################################
+
+
+    ################################ Start  Compare Route #######################################
+
+
+
+
 });
 
 
@@ -59,10 +68,9 @@ Route::group(['middleware'=>'auth'],function (){
    Route::get('/item/labtop/{id}',[singleItemController::class,'get_labtop_data'])->name('labtop');
    Route::get('/item/headphone/{id}',[singleItemController::class,'get_headphone_data'])->name('headphone');
    ################################  End  Single Item Route ##################################
-   
+
 Route::get('/category/{name}',[userCategoryController::class,'index']);
-Route::resource('category',categoryController::class);
-Route::resource('item',itemController::class);
+//Route::resource('item',itemController::class);
 
 
 

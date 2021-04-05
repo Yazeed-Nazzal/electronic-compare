@@ -2,8 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="269d7982-b23f-403a-8f9e-cb9313af5222" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/electronic-comparison.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/electronic-comparison.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/user/userCategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/user/userCategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/user/userCategoryController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_26_194529_create_comments_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/item/create.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/item/edit.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/item/index.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/category/phones.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/category/phones.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,6 +141,9 @@
       <path value="$PROJECT_DIR$/vendor/santigarcor/laratrust" />
       <path value="$PROJECT_DIR$/vendor/kkszymanowski/traitor" />
       <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-honeypot" />
+      <path value="$PROJECT_DIR$/vendor/erusev/parsedown" />
+      <path value="$PROJECT_DIR$/vendor/laravelista/comments" />
     </include_path>
   </component>
   <component name="ProjectId" id="1q4zOODOlMH5SyZjcfY6lJUr4FT" />
@@ -142,7 +155,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Javascript training" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../pharmacey" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -186,7 +199,11 @@
       <workItem from="1617288580508" duration="33000" />
       <workItem from="1617304929176" duration="5008000" />
       <workItem from="1617364558000" duration="9591000" />
-      <workItem from="1617481642451" duration="695000" />
+      <workItem from="1617481642451" duration="2675000" />
+      <workItem from="1617534794451" duration="9328000" />
+      <workItem from="1617560534650" duration="20000" />
+      <workItem from="1617562056054" duration="583000" />
+      <workItem from="1617567364076" duration="5532000" />
     </task>
     <servers />
   </component>

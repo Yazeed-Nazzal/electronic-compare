@@ -1,3 +1,6 @@
+body{
+    height: 1000px ;
+}
 .Undrow-Img
 {
     background-position: center;
@@ -117,7 +120,7 @@
     background-color: #fff;
     padding:40px
 }
-.style_single_page_item .info_item h3{
+.style_single_page_item .info_item h3 , .style_single_page_item .info_item h1{
     color:#b58900;
     font-weight: 400;
 }
@@ -133,5 +136,20 @@
     width: 33.333%
 }
 
-
 /*end style single item page */
+
+/*start style compare box page */
+
+    .compare-box
+    {
+        width:100%;
+        height: 80px;
+        color: #0c2c42;
+        background-color: #fff;
+        position: fixed;
+        bottom: 0px;
+
+
+    }
+
+/*end style compare box page */
