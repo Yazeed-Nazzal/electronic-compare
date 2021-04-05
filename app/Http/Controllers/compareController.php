@@ -20,8 +20,8 @@ class compareController extends Controller
         if ($A->category_id == $B->category_id){
             switch ($A->category_id){
                 case '1':
-                    $item1 = $item1->with('images','laptop');
-                    $item2 = $item2->with('images','laptop');
+                    $item1 = Item::where('id',$item1)->with('laptop')->first();
+                    $item2 = Item::where('id',$item2)->with('laptop')->first();
                     return view('compare.laptop',compact('item1','item2'));
                     break;
                 case '2':
@@ -30,13 +30,13 @@ class compareController extends Controller
                     return view('compare.phone',compact('item1','item2'));
                     break;
                 case '3' :
-                    $item1 = $item1->with('images','watch');
-                    $item2 = $item2->with('images','watch');
+                    $item1 = Item::where('id',$item1)->with('watch')->first();
+                    $item2 = Item::where('id',$item2)->with('watch')->first();
                     return view('compare.watch',compact('item1','item2'));
                     break;
                 case '4':
-                    $item1 = $item1->with('images','watch');
-                    $item2 = $item2->with('images','watch');
+                    $item1 = Item::where('id',$item1)->with('headphone')->first();
+                    $item2 = Item::where('id',$item2)->with('headphone')->first();
                     return view('compare.headphone',compact('item1','item2'));
                     break;
             }

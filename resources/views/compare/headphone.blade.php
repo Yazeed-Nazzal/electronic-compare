@@ -48,7 +48,7 @@
             <div class="col-md-6">
                 <div class="info_item">
                     <div class="w-50 mb-3">
-                        <img class="rounded" src="{{url('uploads/'.$item2->images[0]->name)}}" alt="img" style="width: 200px"; height="200px">
+                        <img class="rounded"   src="{{url('uploads/'.$item2->images[0]->name)}}" alt="img" style="width: 200px"; height="200px">
                     </div>
                     <div>
                         <h1 style="text-transform: capitalize">{{$item2->item_name}}</h1>
@@ -65,25 +65,14 @@
                     <hr>
                     <div class="main_info">
                         <div>
-                            <p><span>Ram :</span> {{$item2->headphone->ram}} GB</p>
+                            <p><span>Type :</span> {{$item2->headphone->type}}</p>
                         </div>
-                        <div>
-                            <p><span>Front Camera :</span> {{$item2->headphone->front_cam}} MP</p>
-                        </div>
-                        <div>
-                            <p><span>Rear Camera :</span> {{$item1->headphone->rear_cam}} MP</p>
-                        </div>
-                    </div>
-                    <div class="main_info">
-                        <div>
-                            <p><span>Storage :</span> {{$item2->headphone->storage}} GB</p>
-                        </div>
-                        <div>
-                            <p><span>Battery :</span> {{$item2->headphone->battery}} mah</p>
-                        </div>
-                        <div>
-                            <p><span>Screen :</span> {{$item2->headphone->screen}} inches</p>
-                        </div>
+                        @if ($item2->headphone->type == "Bluetooth")
+                            <div>
+                                <p><span>Battery :</span> {{$item2->headphone->battery}} MA</p>
+                            </div>
+                        @else
+                        @endif
                     </div>
                     <hr>
                     <h6>More Features</h6>
@@ -96,7 +85,6 @@
                     </div>
                 </div>
             </div>
-
 
         </div>
 

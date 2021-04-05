@@ -27,7 +27,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"  rel="stylesheet">
     <!-- Styles -->
-    
+
 </head>
 <body>
 <div id="app">
@@ -122,7 +122,7 @@
 <script src="{{asset('js/repeater.js')}}"></script>
 
 <script>
-   
+
         $('.repeater-default').repeater({
         show: function () {
             $(this).slideDown();
