@@ -22,7 +22,7 @@ class userCategoryController extends Controller
     {
         switch ($name){
             case 'laptop':
-                $laptops = Item::where('category_id',1)->with('laptops','images')->get();
+                $laptops = Item::where('category_id',1)->with('laptop','images')->get();
                 return view('category.laptops',compact('laptops'));
                 break;
             case 'phone':

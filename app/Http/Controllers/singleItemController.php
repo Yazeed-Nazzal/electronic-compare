@@ -12,17 +12,17 @@ class singleItemController extends Controller
     }
 
     public function get_watch_data($id){
-        $item = Item::find($id);
-        return view('',compact('item'));
+        $watch = Item::with('images','watch','features')->where('id',$id)->first();
+        return view('singleProduct.single_watch',compact('watch'));
     }
 
     public function get_labtop_data($id){
-        $item = Item::find($id);
-        return view('',compact('item'));
+        $laptop = Item::with('images','laptop','features')->where('id',$id)->first();
+        return view('singleProduct.single_labtop',compact('laptop'));
     }
 
     public function get_headphone_data($id){
-        $item = Item::find($id);
-        return view('',compact('item'));
+        $headphone = Item::with('images','headphone','features')->where('id',$id)->first();
+        return view('singleProduct.single_headphone',compact('headphone'));
     }
 }

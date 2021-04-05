@@ -17,25 +17,20 @@
                     </thead>
                     <tbody>
                     @php($counter =1)
-                    @foreach($comments as $comment)
+                    @foreach($comments as $com)
                         <tr>
                             <td>{{$counter}}</td>
-                            <td>{{$comment->comment}}</td>
-                            <td>{{$comment->user->name}}</td>
-                            <td>{{$comment->item->item_name}}</td>
+                            <td>{{$com['comment']}}</td>
+                            <td>{{$com['commenter']['name']}}</td>
+                            <td>{{$com['item']['item_name']}}</td>
                             <td>
-                                <form action="/Admin/comments/{{$comment->id}}" method="POST">
-                                    @csrf
-                                    @method('delete')
-                                    <button class="btn btn-primary">delete</button>
-                                </form>
+                            <a href="{{url('comment/destroy/'.$com['id'])}}" class="btn btn-primary">delete</a>   
                             </td>
                         </tr>
                         @php($counter++)
                     @endforeach
                     </tbody>
                 </table>
-                {{$comments->links()}}
             </div>
         </div>
 

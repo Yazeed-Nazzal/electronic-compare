@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
+use App\Models\User;
+use App\Models\Item;
 use Illuminate\Http\Request;
 
 class CommentController extends Controller
@@ -13,10 +15,18 @@ class CommentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $comments = Comment::with('user','item')->paginate(10);
-
-        return view('admin.comments.index',compact('comments'));
+    {  
+        
+         $comments = Comment::all()->map(function($item){
+            return [
+                'id'=>$item->id,
+                'comment'=>$item->comment,
+                'commenter'=>User::select('name')->where('id',$item->commenter_id)->first(),
+                'item'=>Item::select('item_name')->where('id',$item->commentable_id)->first(),
+            ];
+        });
+        
+         return view('admin.comments.index',compact('comments'));
     }
 
     /**
@@ -28,61 +38,26 @@ class CommentController extends Controller
     {
         //
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Comment  $comment
-     * @return \Illuminate\Http\Response
-     */
     public function show(Comment $comment)
     {
         //
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Comment  $comment
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Comment $comment)
     {
         //
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Comment  $comment
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Comment $comment)
     {
         //
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Comment  $comment
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Comment $comment)
+    public function destroy($comment)
     {
-        $comment->delete();
+        $comment_delete = Comment::find($comment);
+        $comment_delete->delete();
         return back();
     }
 }

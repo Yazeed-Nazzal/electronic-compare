@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\categoryController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\itemController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -30,6 +31,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::group(['prefix'=>'Admin','as'=>'Admin.','middleware'=> ['role:admin']], function() {
     Route::resource('/category',categoryController::class);
     Route::resource('/users',\App\Http\Controllers\UserController::class);
+  
 });
 
 //profile controller
@@ -37,7 +39,9 @@ Route::group(['middleware'=>'auth'],function (){
 
     Route::get('/profile/edit/{user}',[ProfileController::class,'edit']);
     Route::post('/profile/{user}',[ProfileController::class,'update']);
-
+    
+    Route::get('comment',[CommentController::class,'index'])->name('comment');
+    Route::get('comment/destroy/{id}',[CommentController::class,'destroy']);
     ################################ Start  Item Route #######################################
     Route::get('/items/{name}',[itemController::class,'index'])->name('index.item');
     Route::get('/items/create/{name}',[itemController::class,'create'])->name('create.item');
@@ -51,16 +55,8 @@ Route::group(['middleware'=>'auth'],function (){
     Route::get('/item/compare/{item1}/{item2}',[compareController::class,'index']);
     ################################ End  Compare Route #######################################
 
-
-    ################################ Start  Compare Route #######################################
-
-
-
-
+   
 });
-
-
-
 
    ################################ Start Single Item Route ##################################
    Route::get('/item/phone/{id}',[singleItemController::class,'get_phone_data'])->name('phone');

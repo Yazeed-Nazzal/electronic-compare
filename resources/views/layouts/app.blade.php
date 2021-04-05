@@ -66,9 +66,10 @@
                             <a class="nav-link" href="{{ route('home') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('category.index') }}">Manage Category</a>
+                            <a class="nav-link" href="{{ route('Admin.category.index') }}">Manage Category</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ route('comment') }}">Manage Comment</a>
                         </li>
                         <li class="nav-item">
                         <li class="nav-item dropdown">

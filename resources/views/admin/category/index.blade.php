@@ -15,7 +15,7 @@
          </div>
         @endif
        
-    <div class="row">
+    <div class="row justify-content-center">
         <div class="col-lg-8">
             <table class="table table-dark">
                 <thead>
@@ -23,7 +23,6 @@
                     <th scope="col">#</th>
                     <th scope="col">Category</th>
                     <th scope="col">Created Date</th>
-                    <th scope="col">Delete</th>
                     <th scope="col">Update</th>
                     </tr>
                 </thead>
@@ -34,13 +33,6 @@
                         <td>{{$category->category_name}}</td>
                         <td>{{$category->created_at->toDateString()}}</td>
                         <td>
-                            <form action="{{route('category.destroy',$category->id)}}" method="POST">
-                                @csrf
-                                @method('delete')
-                                <button class="btn btn-danger">delete</button>
-                            </form>
-                        </td>
-                        <td>
                             <a href="{{route('category.edit',$category->id)}}" class="btn btn-primary"> Edit</a>
                         </td>
                     </tr>
@@ -48,20 +40,6 @@
                 </tbody>
             </table>  
             {{$categories->links()}}      
-        </div>
-
-
-        <div class="col-lg-4">
-            <form action="{{route('category.store')}}" method="POST" class="form_category_style">
-                @csrf
-                <div class="group-form">
-                    <label for="name">Name Category</label>
-                    <input type="text" name="name" id="name" placeholder="Enter Category" class="form-control">
-                </div>
-                <div class="group-form mt-3">
-                    <button type="submit" class="btn btn-success">Create</button>
-                </div>
-            </form>
         </div>
     </div>
 </div>
