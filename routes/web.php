@@ -21,7 +21,8 @@ use App\Http\Controllers\compareController;
 */
 
 Route::get('/', function () {
-    return view('user_home');
+    $items = \App\Models\Item::latest()->take(5)->get();
+    return view('user-home',compact('items'));
 });
 
 Auth::routes();
@@ -31,7 +32,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::group(['prefix'=>'Admin','as'=>'Admin.','middleware'=> ['role:admin']], function() {
     Route::resource('/category',categoryController::class);
     Route::resource('/users',\App\Http\Controllers\UserController::class);
-  
+
 });
 
 //profile controller
@@ -39,7 +40,7 @@ Route::group(['middleware'=>'auth'],function (){
 
     Route::get('/profile/edit/{user}',[ProfileController::class,'edit']);
     Route::post('/profile/{user}',[ProfileController::class,'update']);
-    
+
     Route::get('comment',[CommentController::class,'index'])->name('comment');
     Route::get('comment/destroy/{id}',[CommentController::class,'destroy']);
     ################################ Start  Item Route #######################################
@@ -55,13 +56,13 @@ Route::group(['middleware'=>'auth'],function (){
     Route::get('/item/compare/{item1}/{item2}',[compareController::class,'index']);
     ################################ End  Compare Route #######################################
 
-   
+
 });
 
    ################################ Start Single Item Route ##################################
    Route::get('/item/phone/{id}',[singleItemController::class,'get_phone_data'])->name('phone');
    Route::get('/item/watch/{id}',[singleItemController::class,'get_watch_data'])->name('watch');
-   Route::get('/item/labtop/{id}',[singleItemController::class,'get_labtop_data'])->name('labtop');
+   Route::get('/item/laptop/{id}',[singleItemController::class,'get_labtop_data'])->name('laptop');
    Route::get('/item/headphone/{id}',[singleItemController::class,'get_headphone_data'])->name('headphone');
    ################################  End  Single Item Route ##################################
 
@@ -70,3 +71,8 @@ Route::get('/category/{name}',[userCategoryController::class,'index']);
 
 
 
+Route::get('/clear-cache-all', function() {
+    Artisan::call('cache:clear');
+
+    dd("Cache Clear All");
+});

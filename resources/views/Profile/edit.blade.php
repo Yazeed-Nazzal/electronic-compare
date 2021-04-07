@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 
     <h1 class="text-center pb-3 mt-5">Profile Edit</h1>

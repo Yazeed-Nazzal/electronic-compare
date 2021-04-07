@@ -70,12 +70,22 @@ class ProfileController extends Controller
     public function update(Request $request, User $user)
     {
         if ($request->has('password') && $request->password != "" ){
-            $request->validate([
-                'name'=>'required',
-                'email'=>'required|unique:users',
-                'password'=>'required|same:confirm',
-                'confirm' => 'required'
-            ]);
+            if (auth()->user()->email == $request->eamil){
+                $request->validate([
+                    'name'=>'required',
+                    'email'=>'required',
+                    'password'=>'required|same:confirm',
+                    'confirm' => 'required'
+                ]);
+            }
+            else{
+                $request->validate([
+                    'name'=>'required',
+                    'email'=>'required|unique:users',
+                    'password'=>'required|same:confirm',
+                    'confirm' => 'required'
+                ]);
+            }
             $user->name = $request->name;
             $user->email = $request->email;
             $user->password = $request->password;
@@ -84,10 +94,19 @@ class ProfileController extends Controller
             return back();
         }
         else{
-            $request->validate([
-                'name'=>'required',
-                'email'=>'required|unique:users',
-            ]);
+
+            if (auth()->user()->email == $request->email){
+                $request->validate([
+                    'name'=>'required',
+                    'email'=>'required',
+                ]);
+            }
+            else{
+                $request->validate([
+                    'name'=>'required',
+                    'email'=>'required|unique:users',
+                ]);
+            }
             $user->name = $request->name;
             $user->email = $request->email;
             $user->save();

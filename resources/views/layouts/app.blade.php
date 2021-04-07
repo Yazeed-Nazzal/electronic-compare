@@ -65,32 +65,48 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('home') }}">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('Admin.category.index') }}">Manage Category</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('comment') }}">Manage Comment</a>
-                        </li>
-                        <li class="nav-item">
+                        @if(auth()->user()->hasRole('admin'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('Admin.category.index') }}">Manage Category</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('comment') }}">Manage Comment</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('Admin.users.index') }}">Manage Users</a>
+                            </li>
+                            <li class="nav-item">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Manage Items
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/items/laptop">Manage Laptops</a>
+                                    <a class="dropdown-item" href="/items/phone">Manage Phones</a>
+                                    <a class="dropdown-item" href="/items/watch">Manage Watches</a>
+                                    <a class="dropdown-item" href="/items/headphone">Manage HeadPhone</a>
+                                </div>
+                            </li>
+
+                            </li>
+                        @endif
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                               Manage Items
+                                Category
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/items/laptop">Manage Laptops</a>
-                                <a class="dropdown-item" href="/items/phone">Manage Phones</a>
-                                <a class="dropdown-item" href="/items/watch">Manage Watches</a>
-                                <a class="dropdown-item" href="/items/headphone">Manage HeadPhone</a>
+                                <a class="dropdown-item" href="/category/laptop">Laptop</a>
+                                <a class="dropdown-item"  href="{{url('/category/phone')}}">Mobile</a>
+                                <a class="dropdown-item"  href="/category/watch">smart watch</a>
+                                <a class="dropdown-item"  href="/category/headphone">Headphones</a>
                             </div>
                         </li>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('Admin.users.index') }}">Manage Users</a>
-                        </li>
+
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
+
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout') }}"
@@ -98,6 +114,8 @@
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
+                                <a class="dropdown-item"" href="/profile/edit/{{auth()->user()->id}}">Edit Profile</a>
+
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf

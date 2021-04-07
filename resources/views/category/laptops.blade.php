@@ -13,7 +13,7 @@
                                 <h5 class="card-title">{{$laptop->item_name}}</h5>
                                 <span>Price : {{$laptop->price}}$</span>
                                 <br><br>
-                                <a href="{{route('labtop',$laptop->id)}}" class="btn btn-primary mb-3">show More</a>
+                                <a href="{{route('laptop',$laptop->id)}}" class="btn btn-primary mb-3">show More</a>
                                 <div class="form-group">
                                     <label style="color: white">Select this item to compare</label>
                                     <input type="checkbox" class="item-check" value="{{$laptop->id}}">

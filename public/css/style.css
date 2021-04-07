@@ -48,7 +48,7 @@ body{
     text-align: center;
 }
 .all_category .category i{
-    font-size:50px;
+    font-size:100px;
     color:#002b36;
 }
 .all_category .category h6{
@@ -151,5 +151,9 @@ body{
 
 
     }
+
+
+
+
 
 /*end style compare box page */

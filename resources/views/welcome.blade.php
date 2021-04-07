@@ -45,17 +45,10 @@
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Category
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="/category/laptop">Laptop</a>
-                            <a class="dropdown-item"  href="{{url('/category/phone')}}">Mobile</a>
-                            <a class="dropdown-item"  href="/category/watch">smart watch</a>
-                            <a class="dropdown-item"  href="/category/headphone">Headphones</a>
-                        </div>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/category/laptop">Laptop</a</li>
+                    <li class="nav-item"><a class="nav-link"  href="{{url('/category/phone')}}">Mobile</a></li>
+                    <li class="nav-item"><a class="nav-link"  href="/category/watch">smart watch</a></li>
+                    <li class="nav-item"><a class="nav-link"  href="/category/headphone">Headphones</a></li>
                     @guest
                         @if (Route::has('login'))
                             <li class="nav-item">
@@ -84,6 +77,7 @@
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
+                                <a class="dropdown-item"" href="/profile/edit/{{auth()->user()->id}}">Edit Profile</a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf

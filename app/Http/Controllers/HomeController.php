@@ -36,7 +36,8 @@ class HomeController extends Controller
         }
         else
         {
-            return view('user_home');
+            $items = Item::latest()->take(5)->get();
+            return view('user-home',compact('items'));
         }
 
     }
