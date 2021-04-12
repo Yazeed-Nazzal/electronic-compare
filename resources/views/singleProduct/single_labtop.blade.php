@@ -18,26 +18,29 @@
                     <p><span>Company Made :</span> {{$laptop->company}}</p>
                 </div>
                 <div>
-                    <p><span>Price :</span>{{$laptop->price}}$</p>
+                    <p><span>Price :</span>: @if (Session::has('price'))
+                                {{$laptop->price * Session::get('price',1)}} {{ Session::get('price-sign',"$")}}
+
+                            @endif</p>
                 </div>
                 <div>
-                    <p><span>Description :</span> {{$laptop->description}}</p>  
+                    <p><span>Description :</span> {{$laptop->description}}</p>
                 </div>
                 <hr>
                 <div class="main_info">
                     <div>
-                        <p><span>Ram :</span> {{$laptop->laptop->ram}} GB</p>  
+                        <p><span>Ram :</span> {{$laptop->laptop->ram}} GB</p>
                     </div>
                     <div>
-                        <p><span>Processor :</span> {{$laptop->laptop->processor}} </p>  
+                        <p><span>Processor :</span> {{$laptop->laptop->processor}} </p>
                     </div>
                 </div>
                 <div class="main_info">
                     <div>
-                        <p><span>Gpu</span> {{$laptop->laptop->gpu}}</p>  
+                        <p><span>Gpu</span> {{$laptop->laptop->gpu}}</p>
                     </div>
                     <div>
-                        <p><span>Storage :</span> {{$laptop->laptop->storage}} </p>  
+                        <p><span>Storage :</span> {{$laptop->laptop->storage}} </p>
                     </div>
                 </div>
                 <hr>
@@ -45,7 +48,7 @@
                 <div class="main_info">
                     @foreach($laptop->features as $feature)
                     <div>
-                        <p><span>{{$feature->feature_name}} : </span> {{$feature->feature_value}}</p>  
+                        <p><span>{{$feature->feature_name}} : </span> {{$feature->feature_value}}</p>
                     </div>
                     @endforeach
                 </div>
@@ -58,9 +61,9 @@
     <h3 class="mt-5">Comments</h3>
     <div class="row mt-5">
         <div class="col-lg-12">
-           
+
                 @comments(['model' => App\Models\Item::find($laptop->id)])
-       
+
         </div>
     </div>
 </div>

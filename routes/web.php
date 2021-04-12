@@ -66,6 +66,13 @@ Route::group(['middleware'=>'auth'],function (){
    Route::get('/item/headphone/{id}',[singleItemController::class,'get_headphone_data'])->name('headphone');
    ################################  End  Single Item Route ##################################
 
+################################  Start  Price Route ##################################
+Route::get('/Price/{currency}',[\App\Http\Controllers\PriceController::class,'changePrice']);
+###############################  End  Price Route #####################################
+
+
+
+
 Route::get('/category/{name}',[userCategoryController::class,'index']);
 //Route::resource('item',itemController::class);
 

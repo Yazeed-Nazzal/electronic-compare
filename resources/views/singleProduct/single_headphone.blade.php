@@ -18,19 +18,22 @@
                     <p><span>Company Made :</span> {{$headphone->company}}</p>
                 </div>
                 <div>
-                    <p><span>Price :</span>{{$headphone->price}}$</p>
+                    <p><span>Price :</span>: @if (Session::has('price'))
+                            {{$headphone->price * Session::get('price',1)}}{{ Session::get('price-sign',"$")}}
+
+                        @endif</p>
                 </div>
                 <div>
-                    <p><span>Description :</span> {{$headphone->description}}</p>  
+                    <p><span>Description :</span> {{$headphone->description}}</p>
                 </div>
                 <hr>
-              
+
                 <div class="main_info">
                     <div>
-                        <p><span>Type :</span> {{$headphone->headphone->type}}</p>  
+                        <p><span>Type :</span> {{$headphone->headphone->type}}</p>
                     </div>
                     <div>
-                        <p><span>Battery :</span> {{$headphone->headphone->battery}} mah</p>  
+                        <p><span>Battery :</span> {{$headphone->headphone->battery}} mah</p>
                     </div>
                 </div>
                 <hr>
@@ -38,7 +41,7 @@
                 <div class="main_info">
                     @foreach($headphone->features as $feature)
                     <div>
-                        <p><span>{{$feature->feature_name}} : </span> {{$feature->feature_value}}</p>  
+                        <p><span>{{$feature->feature_name}} : </span> {{$feature->feature_value}}</p>
                     </div>
                     @endforeach
                 </div>
@@ -51,9 +54,9 @@
     <h3 class="mt-5">Comments</h3>
     <div class="row mt-5">
         <div class="col-lg-12">
-           
+
                 @comments(['model' => App\Models\Item::find($headphone->id)])
-       
+
         </div>
     </div>
 </div>

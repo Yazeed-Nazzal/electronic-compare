@@ -40,7 +40,10 @@
                                      src="{{url('uploads/'.$item->images[0]->name)}}" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $item->name }}</h5>
-                                    <span>{{$item->price}}</span>
+                                    <span>Price : @if (Session::has('price'))
+                                            {{$item->price * Session::get('price',1)}}{{ Session::get('price-sign',"$")}}
+
+                                        @endif</span>
                                     <br><br>
                                     @php
                                         $cat = $item->category_id;

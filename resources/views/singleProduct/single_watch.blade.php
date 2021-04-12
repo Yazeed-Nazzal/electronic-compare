@@ -18,15 +18,17 @@
                     <p><span>Company Made :</span> {{$watch->company}}</p>
                 </div>
                 <div>
-                    <p><span>Price :</span>{{$watch->price}}$</p>
+                    <p><span>Price :</span>: @if (Session::has('price'))
+                            {{$watch->price * Session::get('price',1)}}{{ Session::get('price-sign',"$")}}
+                        @endif</p>
                 </div>
                 <div>
-                    <p><span>Description :</span> {{$watch->description}}</p>  
+                    <p><span>Description :</span> {{$watch->description}}</p>
                 </div>
                 <hr>
                 <div class="main_info">
                     <div>
-                        <p><span>Battery :</span> {{$watch->watch->Battery}} </p>  
+                        <p><span>Battery :</span> {{$watch->watch->Battery}} </p>
                     </div>
                     <div>
                     @if($watch->watch->waterproof == 1)
@@ -40,7 +42,7 @@
                     <p><span>Calling : Avaliable</span> </p>
                     @elseif($watch->watch->calling == 2)
                     <p><span>Calling : Not Avaliable</span> </p>
-                    @endif 
+                    @endif
                     </div>
                 </div>
                 <hr>
@@ -48,7 +50,7 @@
                 <div class="main_info">
                     @foreach($watch->features as $feature)
                     <div>
-                        <p><span>{{$feature->feature_name}} : </span> {{$feature->feature_value}}</p>  
+                        <p><span>{{$feature->feature_name}} : </span> {{$feature->feature_value}}</p>
                     </div>
                     @endforeach
                 </div>
@@ -61,9 +63,9 @@
     <h3 class="mt-5">Comments</h3>
     <div class="row mt-5">
         <div class="col-lg-12">
-           
+
                 @comments(['model' => App\Models\Item::find($watch->id)])
-       
+
         </div>
     </div>
 </div>
