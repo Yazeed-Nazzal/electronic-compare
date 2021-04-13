@@ -18,9 +18,9 @@
                     <p><span>Company Made :</span> {{$watch->company}}</p>
                 </div>
                 <div>
-                    <p><span>Price :</span>: @if (Session::has('price'))
+                    <p><span>Price :</span>:
                             {{$watch->price * Session::get('price',1)}}{{ Session::get('price-sign',"$")}}
-                        @endif</p>
+                        </p>
                 </div>
                 <div>
                     <p><span>Description :</span> {{$watch->description}}</p>

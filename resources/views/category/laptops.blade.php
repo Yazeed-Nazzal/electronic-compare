@@ -11,10 +11,10 @@
                             <img class="card-img-top" style="height:200px" src="{{url('uploads/'.$laptop->images[0]->name)}}" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title">{{$laptop->item_name}}</h5>
-                                <span>Price : @if (Session::has('price'))
+                                <span>Price :
                                         {{$laptop->price * Session::get('price',1)}}{{ Session::get('price-sign',"$")}}
 
-                                @endif</span>
+                              </span>
                                 <br><br>
                                 <a href="{{route('laptop',$laptop->id)}}" class="btn btn-primary mb-3">show More</a>
                                 <div class="form-group">

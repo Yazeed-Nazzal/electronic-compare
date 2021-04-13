@@ -16,10 +16,10 @@
                         <p><span>Company Made :</span> {{$item1->company}}</p>
                     </div>
                     <div>
-                        <p><span>Price :</span>: @if (Session::has('price'))
+                        <p><span>Price :</span>:
                                 {{$item1->price * Session::get('price',1)}}{{ Session::get('price-sign',"$")}}
 
-                            @endif</p>
+                      </p>
                     </div>
                     <div>
                         <p><span>Description :</span> {{$item1->description}}</p>

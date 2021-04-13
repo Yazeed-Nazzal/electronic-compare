@@ -59,7 +59,7 @@
             <div class="col-md-6">
                 <div class="info_item">
                     <div class="w-50 mb-3">
-                        <img class="rounded" src="{{url('uploads/'.$item2->images[0]->name)}}" alt="img" style="width: 200px"; height="200px">
+                        <img class="rounded"   src="{{url('uploads/'.$item2->images[0]->name)}}" alt="img" style="width: 200px"; height="200px">
                     </div>
                     <div>
                         <h1 style="text-transform: capitalize">{{$item2->item_name}}</h1>
@@ -69,7 +69,7 @@
                     </div>
                     <div>
                         <p><span>Price :</span>: @if (Session::has('price'))
-                                {{$item2->price * Session::get('price',1)}}{{ Session::get('price-sign',"$")}}
+                                {{$item1->price * Session::get('price',1)}}{{ Session::get('price-sign',"$")}}
 
                             @endif</p>
                     </div>
@@ -82,22 +82,19 @@
                             <p><span>Ram :</span> {{$item2->laptop->ram}} GB</p>
                         </div>
                         <div>
-                            <p><span>Front Camera :</span> {{$item2->laptop->front_cam}} MP</p>
+                            <p><span>Processor :</span> {{$item2->laptop->processor}}</p>
                         </div>
                         <div>
-                            <p><span>Rear Camera :</span> {{$item1->laptop->rear_cam}} MP</p>
+                            <p><span>Storage :</span> {{$item2->laptop->storage}}GB</p>
                         </div>
                     </div>
                     <div class="main_info">
                         <div>
-                            <p><span>Storage :</span> {{$item2->laptop->storage}} GB</p>
+                            <p><span>GPU :</span> {{$item2->laptop->gpu}}</p>
                         </div>
-                        <div>
-                            <p><span>Battery :</span> {{$item2->laptop->battery}} mah</p>
-                        </div>
-                        <div>
-                            <p><span>Screen :</span> {{$item2->laptop->screen}} inches</p>
-                        </div>
+                        {{--                        <div>--}}
+                        {{--                            <p><span>Screen :</span> {{$item1->laptop->screen}} inches</p>--}}
+                        {{--                        </div>--}}
                     </div>
                     <hr>
                     <h6>More Features</h6>
@@ -110,6 +107,7 @@
                     </div>
                 </div>
             </div>
+
 
 
         </div>
