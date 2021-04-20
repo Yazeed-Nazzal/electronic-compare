@@ -36,7 +36,7 @@
                         <tr>
                             <td><img src="{{url('uploads/'.$item->images[0]->name)}}" style="width:100px;height:100px" alt=""></td>
                             <td>{{$item->item_name}}</td>
-                            <td>{{$item->price}} JOD</td>
+                            <td>{{$item->price}} $</td>
                             <td>{{$item->phone->ram}} </td>
                             <td>{{$item->phone->front_cam}} </td>
                             <td>{{$item->phone->rear_cam}} </td>

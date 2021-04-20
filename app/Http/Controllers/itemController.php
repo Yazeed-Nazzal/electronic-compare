@@ -17,7 +17,6 @@ class itemController extends Controller
 {
 
     public function index($name){
-
         switch ($name){
             case 'laptop':
                 $items = Item::with('images','laptop')->where('category_id',1)->get();

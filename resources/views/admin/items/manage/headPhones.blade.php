@@ -31,7 +31,7 @@
                         <tr>
                             <td><img src="{{url('uploads/'.$item->images[0]->name)}}" style="width:100px;height:100px" alt=""></td>
                             <td>{{$item->item_name}}</td>
-                            <td>{{$item->price}} JOD</td>
+                            <td>{{$item->price}} $</td>
                             <td>{{$item->headphone->type}}</td>
                             @if ($item->headphone->type == "Bluetooth")
                                  <td>{{$item->headphone->battery}}</td>

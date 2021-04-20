@@ -21,6 +21,7 @@ class userCategoryController extends Controller
     public function index($name)
     {
         switch ($name){
+
             case 'laptop':
                 $laptops = Item::where('category_id',1)->with('laptop','images')->get();
                 return view('category.laptops',compact('laptops'));

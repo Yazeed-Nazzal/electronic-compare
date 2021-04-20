@@ -66,9 +66,7 @@
                             <a class="nav-link" href="{{ route('home') }}">Home</a>
                         </li>
                         @if(auth()->user()->hasRole('admin'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('Admin.category.index') }}">Manage Category</a>
-                            </li>
+
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('comment') }}">Manage Comment</a>
                             </li>

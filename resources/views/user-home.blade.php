@@ -48,17 +48,20 @@
                                     @php
                                         $cat = $item->category_id;
 
+
                                         switch ($cat){
                                            case '1':
                                                $cat = 'laptop';
-                                            break;
+                                               break;
                                             case '2':
                                                  $cat = 'phone';
+                                                 break;
                                             case '3' :
                                                 $cat = 'watch';
                                                 break;
                                             case '4':
                                                 $cat = 'headphone';
+                                                break;
                                         }
                                     @endphp
                                     <a href="{{route($cat,$item->id)}}" class="btn btn-primary mb-3">show More</a>

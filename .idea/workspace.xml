@@ -3,18 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="269d7982-b23f-403a-8f9e-cb9313af5222" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/category/headPhones.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/category/headPhones.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/category/laptops.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/category/laptops.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/category/phones.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/category/phones.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/category/watches.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/category/watches.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/compare/headphone.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/compare/headphone.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/compare/laptop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/compare/laptop.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/compare/phone.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/compare/phone.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/compare/watch.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/compare/watch.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/singleProduct/single_headphone.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/singleProduct/single_headphone.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/singleProduct/single_labtop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/singleProduct/single_labtop.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/singleProduct/single_phone.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/singleProduct/single_phone.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/singleProduct/single_watch.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/singleProduct/single_watch.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/itemController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/itemController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/user/userCategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/user/userCategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Role.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/items/manage/headPhones.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/items/manage/headPhones.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/items/manage/laptops.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/items/manage/laptops.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/items/manage/phones.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/items/manage/phones.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/items/manage/watches.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/items/manage/watches.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/user-home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user-home.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -157,7 +154,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../pharmacey" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../pharmacy-managment" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -213,7 +210,11 @@
       <workItem from="1617868291494" duration="1003000" />
       <workItem from="1615465814108" duration="227000" />
       <workItem from="1618257037344" duration="4543000" />
-      <workItem from="1618345506391" duration="1053000" />
+      <workItem from="1618345506391" duration="1733000" />
+      <workItem from="1618436066286" duration="229000" />
+      <workItem from="1618687951731" duration="5844000" />
+      <workItem from="1618778550003" duration="20000" />
+      <workItem from="1618952945229" duration="859000" />
     </task>
     <servers />
   </component>
