@@ -4,39 +4,39 @@
 <div class="container">
     <h1 class="text-center mb-3">Edit Watch</h1>
     <div class="row justify-content-center">
-    
+
         <div class="col-lg-8">
         <form class="form repeater-default" action="{{route('update.item',['name'=>'watch','id'=>$item->id] )}}" method="POST"  enctype="multipart/form-data">
             @csrf
-         
+
             <label>Name</label>
             <input type="text" name="name" value="{{$item->item_name}}" placeholder="Enter Phone Name"  required class="form-control" >
 
             <label>Description</label>
             <textarea type="text" name="description" placeholder="Enter Description" required class="form-control" >{{$item->description}}</textarea>
-            
+
             <label>Price</label>
             <input type="number" name="price" min="1.0" value="{{$item->price}}" placeholder="Enter price" required class="form-control">
-           
+
             <label>Company</label>
             <input type="text" name="company" min="1.0" value="{{$item->company}}" placeholder="Enter Company Made" required class="form-control">
-           
+
             <label>Battery</label>
             <input type="number" name="battery" min="1.0" value="{{$item->watch->battery}}" placeholder="Enter Capacity Bettery" required class="form-control">
-           
+
             <label>Waterproof</label>
             <select name="waterproof" id="waterproof" class="form-control">
                 <option value="1" @if( $item->watch->waterproof == 1) selected @endif>Yes</option>
-                <option value="2" @if( $item->watch->waterproof == 2) selected @endif>No</option>
+                <option value="0" @if( $item->watch->waterproof == 0) selected @endif>No</option>
             </select>
 
             <label>Calling</label>
             <select name="calling" id="calling" class="form-control">
                 <option value="1" @if( $item->watch->calling == 1) selected @endif>Yes</option>
-                <option value="2" @if( $item->watch->calling == 2) selected @endif>No</option>
+                <option value="0" @if( $item->watch->calling == 0) selected @endif>No</option>
             </select>
-        
-            <div> 
+
+            <div>
                 <label>Image Item</label>
                 <input type="file" name="image_category[]" class="form-control" multiple>
             </div>
@@ -53,7 +53,7 @@
                         <input type="text" name="feature_value" class="form-control" value="{{$item->features[$i]->feature_value}}" placeholder="Enter Feature Value">
                     </div>
                 @endfor
-                
+
                 </div>
                 <hr>
                 </div>
@@ -64,9 +64,9 @@
                 </div>
             </div>
         </div>
-        </form> 
+        </form>
     </div>
 </div>
-      
+
 @endsection
 

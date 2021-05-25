@@ -20,6 +20,7 @@
                     <tr>
                         <th scope="col">Image</th>
                         <th scope="col">Name</th>
+                        <th scope="col">Price</th>
                         <th scope="col">Type</th>
                         <th scope="col">Battery</th>
                         <th scope="col">Added Date</th>

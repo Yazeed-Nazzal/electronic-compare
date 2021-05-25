@@ -35,7 +35,7 @@
 
                     <div>
                         <label>Image Item</label>
-                        <input type="file" name="image_category[]" class="form-control" multiple>
+                        <input type="file" name="image_category[]" required class="form-control" multiple>
                     </div>
 
                     <div data-repeater-list="group_a">

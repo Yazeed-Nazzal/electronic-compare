@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig host="34.234.65.105" id="f5702960-2d0c-4d13-af4d-f2d49cc04bf3" keyPath="C:\Users\MY LAPTOP\Desktop\NCITDEV(47).ppk" port="22" nameFormat="DESCRIPTIVE" username="ec2-user" />
+    </configs>
+  </component>
+</project>

@@ -5,7 +5,7 @@
 <div class="container">
     <h1 class="text-center mb-3">Add Headphone</h1>
     <div class="row justify-content-center">
-    
+
         <div class="col-lg-8">
         <form class="form repeater-default repeater" action="{{route('store.item','headphone')}}" method="POST"  enctype="multipart/form-data">
             @csrf
@@ -14,10 +14,10 @@
 
             <label>Description</label>
             <textarea type="text" name="description" placeholder="Enter Description" required class="form-control" ></textarea>
-            
+
             <label>Price</label>
             <input type="number" name="price" min="1.0" placeholder="Enter price" required class="form-control">
-           
+
             <label>Company</label>
             <input type="text" name="company" min="1.0" placeholder="Enter Company Made" required class="form-control">
 
@@ -29,12 +29,12 @@
 
             <label>Battery</label>
             <input type="number" name="battery" min="1.0" placeholder="Enter Capacity Bettery" required class="form-control">
-          
-            <div> 
+
+            <div>
                 <label>Image Item</label>
-                <input type="file" name="image_category[]" class="form-control" multiple>
+                <input type="file" name="image_category[]" required class="form-control" multiple>
             </div>
-            
+
             <div data-repeater-list="group_a">
                 <div data-repeater-item>
                 <div class="row justify-content-between">
@@ -64,7 +64,7 @@
                 </div>
             </div>
         </div>
-        </form> 
+        </form>
     </div>
 </div>
 

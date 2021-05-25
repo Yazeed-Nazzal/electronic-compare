@@ -33,7 +33,7 @@
                         <p><span>Type :</span> {{$headphone->headphone->type}}</p>
                     </div>
                     <div>
-                        <p><span>Battery :</span> {{$headphone->headphone->battery}} mah</p>
+                        <p><span>Battery :</span> {{$headphone->headphone->battery}} MA</p>
                     </div>
                 </div>
                 <hr>

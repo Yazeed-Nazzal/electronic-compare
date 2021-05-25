@@ -28,9 +28,6 @@
                 <hr>
                 <div class="main_info">
                     <div>
-                        <p><span>Battery :</span> {{$watch->watch->Battery}} </p>
-                    </div>
-                    <div>
                     @if($watch->watch->waterproof == 1)
                     <p><span>Waterproof : Avaliable</span> </p>
                     @elseif($watch->watch->waterproof == 2)
@@ -40,6 +37,9 @@
                     <div>
                     @if($watch->watch->calling == 1)
                     <p><span>Calling : Avaliable</span> </p>
+
+                    <span>Battery :</span> {{$watch->watch->battery}}MA
+
                     @elseif($watch->watch->calling == 2)
                     <p><span>Calling : Not Avaliable</span> </p>
                     @endif
