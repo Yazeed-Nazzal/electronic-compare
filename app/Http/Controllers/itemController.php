@@ -81,15 +81,22 @@ class itemController extends Controller
                     'item_id'=>$item->id,
                 ]);
 
-                $all_feature = $request->group_a;
 
-                // insert all feature to single item in feature table
-                for($i=0;$i<count($all_feature);$i++){
-                    Feature::create([
-                        'feature_name'=>$all_feature[$i]['feature_name'],
-                        'feature_value'=>$all_feature[$i]['feature_value'],
-                        'item_id'=>$item->id,
-                    ]);
+                try {
+                    $all_feature = $request->group_a;
+
+                    // insert all feature to single item in feature table
+                    for($i=0;$i<count($all_feature);$i++){
+                        Feature::create([
+                            'feature_name'=>$all_feature[$i]['feature_name'],
+                            'feature_value'=>$all_feature[$i]['feature_value'],
+                            'item_id'=>$item->id,
+                        ]);
+                    }
+                }
+
+                catch (\Exception $exception){
+                    // make try and catch and let the catch empty
                 }
 
 
@@ -127,16 +134,22 @@ class itemController extends Controller
                     'item_id'=>$item->id,
                 ]);
 
-                 // // get all feature from request
-                $all_feature = $request->group_a;
+                try {
 
-                // insert all feature to single item in feature table
-                for($i=0;$i<count($all_feature);$i++){
-                    Feature::create([
-                        'feature_name'=>$all_feature[$i]['feature_name'],
-                        'feature_value'=>$all_feature[$i]['feature_value'],
-                        'item_id'=>$item->id,
-                    ]);
+                    // // get all feature from request
+                    $all_feature = $request->group_a;
+
+                    // insert all feature to single item in feature table
+                    for($i=0;$i<count($all_feature);$i++){
+                        Feature::create([
+                            'feature_name'=>$all_feature[$i]['feature_name'],
+                            'feature_value'=>$all_feature[$i]['feature_value'],
+                            'item_id'=>$item->id,
+                        ]);
+                    }
+                }
+                catch (\Exception $exception){
+
                 }
 
 
@@ -169,16 +182,21 @@ class itemController extends Controller
                     'item_id'=>$item->id,
                 ]);
 
-                // get all feature from request
-                $all_feature = $request->group_a;
+                try {
 
-                // insert all feature to single item in feature table
-                for($i=0;$i<count($all_feature);$i++){
-                    Feature::create([
-                        'feature_name'=>$all_feature[$i]['feature_name'],
-                        'feature_value'=>$all_feature[$i]['feature_value'],
-                        'item_id'=>$item->id,
-                    ]);
+                }
+                catch (\Exception $exception){
+                    // get all feature from request
+                    $all_feature = $request->group_a;
+
+                    // insert all feature to single item in feature table
+                    for($i=0;$i<count($all_feature);$i++){
+                        Feature::create([
+                            'feature_name'=>$all_feature[$i]['feature_name'],
+                            'feature_value'=>$all_feature[$i]['feature_value'],
+                            'item_id'=>$item->id,
+                        ]);
+                    }
                 }
 
 
@@ -209,16 +227,22 @@ class itemController extends Controller
                     'item_id'=>$item->id,
                 ]);
 
-                // get all feature from request
-                $all_feature = $request->group_a;
+                try {
 
-                // insert all feature to single item in feature table
-                for($i=0;$i<count($all_feature);$i++){
-                    Feature::create([
-                        'feature_name'=>$all_feature[$i]['feature_name'],
-                        'feature_value'=>$all_feature[$i]['feature_value'],
-                        'item_id'=>$item->id,
-                    ]);
+                    // get all feature from request
+                    $all_feature = $request->group_a;
+
+                    // insert all feature to single item in feature table
+                    for($i=0;$i<count($all_feature);$i++){
+                        Feature::create([
+                            'feature_name'=>$all_feature[$i]['feature_name'],
+                            'feature_value'=>$all_feature[$i]['feature_value'],
+                            'item_id'=>$item->id,
+                        ]);
+                    }
+                }
+                catch (\Exception $exception){
+
                 }
 
 

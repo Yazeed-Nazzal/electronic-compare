@@ -3,16 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="269d7982-b23f-403a-8f9e-cb9313af5222" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/items/create/create-headphone.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/items/create/create-headphone.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/items/create/create-laptop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/items/create/create-laptop.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/items/create/create-phone.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/items/create/create-phone.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/items/create/create-watch.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/items/create/create-watch.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/items/edit/edit-watch.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/items/edit/edit-watch.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/items/manage/headPhones.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/items/manage/headPhones.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/singleProduct/single_headphone.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/singleProduct/single_headphone.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/singleProduct/single_watch.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/singleProduct/single_watch.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/itemController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/itemController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/compare/laptop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/compare/laptop.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/compare/phone.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/compare/phone.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/compare/watch.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/compare/watch.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,6 +217,8 @@
       <workItem from="1620734590192" duration="21480000" />
       <workItem from="1621342518343" duration="63000" />
       <workItem from="1621886250352" duration="4310000" />
+      <workItem from="1621974252595" duration="727000" />
+      <workItem from="1622235665000" duration="1744000" />
     </task>
     <servers />
   </component>

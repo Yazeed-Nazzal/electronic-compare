@@ -16,7 +16,7 @@
                         <p><span>Company Made :</span> {{$item1->company}}</p>
                     </div>
                     <div>
-                        <p><span>Price :</span>:
+                        <p><span>Price :</span>
                                 {{$item1->price * Session::get('price',1)}}{{ Session::get('price-sign',"$")}}
 
                       </p>
@@ -71,10 +71,7 @@
                         <p><span>Company Made :</span> {{$item2->company}}</p>
                     </div>
                     <div>
-                        <p><span>Price :</span>: @if (Session::has('price'))
-                                {{$item2->price * Session::get('price',1)}}{{ Session::get('price-sign',"$")}}
-
-                            @endif</p>
+                        <p><span>Price :</span>{{$item2->price * Session::get('price',1)}}{{ Session::get('price-sign',"$")}}</p>
                     </div>
                     <div>
                         <p><span>Description :</span> {{$item2->description}}</p>
