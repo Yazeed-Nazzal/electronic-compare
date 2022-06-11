@@ -22,9 +22,9 @@
                             <td>{{$counter}}</td>
                             <td>{{$com['comment']}}</td>
                             <td>{{$com['commenter']['name']}}</td>
-                            <td>{{$com['item']['item_name']}}</td>
+                            <td>{{$com['item']['item_name']??''}}</td>
                             <td>
-                            <a href="{{url('comment/destroy/'.$com['id'])}}" class="btn btn-primary">delete</a>   
+                            <a href="{{url('comment/destroy/'.$com['id'])}}" class="btn btn-primary">delete</a>
                             </td>
                         </tr>
                         @php($counter++)

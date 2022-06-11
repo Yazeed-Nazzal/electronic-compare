@@ -43,16 +43,18 @@
             <div data-repeater-list="group_a">
                 <div data-repeater-item>
                 <div class="row justify-content-between">
-                @for($i = 0 ; $i < count($item->features) ; $i++)
-                    <div class="col-md-6 col-sm-12 form-group">
-                        <label >Feature Name </label>
-                        <input type="text" name="feature_name" class="form-control"  value="{{$item->features[$i]->feature_name}}" placeholder="Enter Feature Name">
-                    </div>
-                    <div class="col-md-6 col-sm-12 form-group">
-                        <label >Feature Value</label>
-                        <input type="text" name="feature_value" class="form-control" value="{{$item->features[$i]->feature_value}}" placeholder="Enter Feature Value">
-                    </div>
-                @endfor
+                    @if($item->features)
+                        @for($i = 0 ; $i < count($item->features) ; $i++)
+                            <div class="col-md-6 col-sm-12 form-group">
+                                <label >Feature Name </label>
+                                <input type="text" name="feature_name" class="form-control"  value="{{$item->features[$i]->feature_name}}" placeholder="Enter Feature Name">
+                            </div>
+                            <div class="col-md-6 col-sm-12 form-group">
+                                <label >Feature Value</label>
+                                <input type="text" name="feature_value" class="form-control" value="{{$item->features[$i]->feature_value}}" placeholder="Enter Feature Value">
+                            </div>
+                        @endfor
+                    @endif
 
                 </div>
                 <hr>
